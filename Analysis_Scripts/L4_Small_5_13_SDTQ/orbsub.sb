@@ -1,0 +1,33 @@
+#!/bin/bash
+#SBATCH
+#SBATCH -J ORB
+#SBATCH --export=ALL
+#SBATCH --cpus-per-task=10
+#SBATCH --nodes=1
+#SBATCH --mem-per-cpu=16GB
+#SBATCH -t 24:00:00
+# SBATCH --mail-user=stewa668@msu.edu
+
+BaseScrDir=/mnt/gs21/scratch
+PbsId=`echo ${PBS_JOBID} | cut -d "." -f1`
+
+ScrDir=${BaseScrDir}/${USER}/${PbsId}
+
+mkdir -p $ScrDir
+
+myexe="python"
+job="orb"
+
+rm -r /mnt/gs21/scratch/stewa668/$PbsId 2> /dev/null
+mkdir /mnt/gs21/scratch/stewa668/$PbsId
+
+cd $ScrDir
+
+cp  $SLURM_SUBMIT_DIR/*.py $ScrDir/
+cp $SLURM_SUBMIT_DIR/*.molden $ScrDir/
+cp $SLURM_SUBMIT_DIR/*.dat $ScrDir/
+cp $SLURM_SUBMIT_DIR/*.out $ScrDir/
+
+"$myexe"  "$job".py > $SLURM_SUBMIT_DIR/$job.out
+
+cp $ScrDir/* $SLURM_SUBMIT_DIR
