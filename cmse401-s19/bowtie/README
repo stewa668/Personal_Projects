@@ -1,0 +1,1 @@
+Bowtie is a software package commonly used for sequence alignment and sequence analysis in bioinformatics. The example includes some data files and also a qsubfile: bowtie.qsub. To run the file, enter the command qsub bowtie.qsub. For SLURM, enter the command sbatch bowtie.sb.

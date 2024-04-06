@@ -1,0 +1,16 @@
+#!/bin/bash -login
+#PBS -l walltime=00:10:00,nodes=1:ppn=5
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+module load bowtie 
+
+mkdir $PBS_JOBID
+cp campy* ./$PBS_JOBID
+cd $PBS_JOBID
+
+bowtie-build campy.fa campy
+
+#ppn above should be 1 larger than -p below
+time bowtie -p 4 campy campy-pre-1m.fastq > campy-pre-1m.map
+

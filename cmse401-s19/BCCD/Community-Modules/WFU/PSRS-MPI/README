@@ -1,0 +1,17 @@
+The files contained in this directory were developed as part of an
+instructional module on parallel computing.  The website that contains
+the links to these modules is:
+
+   http://csweb.cs.wfu.edu/bigiron
+
+If the link name of an instructional module is LittleFE-MPI-TrapezoidalRule, 
+then the module (usually) begins at
+
+   http://csweb.cs.wfu.edu/bigiron/LittleFE-MPI-TrapezoidalRule/build/html/index.html
+
+David John and Stan Thomas
+Department of Computer Science
+Wake Forest University
+
+November 2013
+

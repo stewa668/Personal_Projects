@@ -1,0 +1,22 @@
+#!/bin/bash
+echo "cube.png" > times.txt
+for i in {1..5}
+do
+  ./process images/cube.png 1.png >> times.txt 
+done
+echo "earth.png" >> times.txt
+for i in {1..5}
+do
+  ./process images/earth.png 2.png >> times.txt
+done
+echo "MSUStadium.png" >> times.txt
+for i in {1..5}
+do
+  ./process images/MSUStadium.png 3.png >> times.txt
+done
+echo "sparty.png" >> times.txt
+for i in {1..5}
+do
+  ./process images/sparty.png 4.png >> times.txt
+done
+

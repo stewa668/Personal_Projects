@@ -1,0 +1,22 @@
+#!/bin/bash -login
+#SBATCH --time=00:10:00
+#SBATCH --ntasks=16
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=10G
+#SBATCH --job-name Pandemic 
+
+cd ${SLURM_SUBMIT_DIR}
+module swap GNU Intel
+module load OpenMPI
+
+# Benchmark program with different numbers of processes
+time mpirun -n 1 ./Pandemic.c-openmp -w 1000 -h 1000 -n 100000
+time mpirun -n 2 ./Pandemic.c-openmp -w 1000 -h 1000 -n 100000
+time mpirun -n 4 ./Pandemic.c-openmp -w 1000 -h 1000 -n 100000 
+time mpirun -n 8 ./Pandemic.c-openmp -w 1000 -h 1000 -n 100000 
+time mpirun -n 16 ./Pandemic.c-openmp -w 1000 -h 1000 -n 100000
+
+scontrol show job $SLURM_JOB_ID
+
+
+

@@ -1,0 +1,14 @@
+#!/bin/bash -login
+#SBATCH --time=00:10:00
+#SBATCH --ntasks=400
+#SBATCH --mem-per-cpu=1G
+#SBATCH --job-name Galaxsee 
+
+time srun GalaxSee.cxx-mpi 100000 
+time mpirun GalaxSee.cxx-mpi 100000 
+time mpiexec GalaxSee.cxx-mpi 100000 
+
+control show job $SLURM_JOB_ID
+
+
+

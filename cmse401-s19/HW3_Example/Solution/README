@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Run this file to download the data and get everything working
+# Program tries to skip steps if output files already exist
+
+./getData.sh
+
+if [ -f Caenorhabditis_elegans.WBcel235.dna.toplevel.fa.gz.ann ]
+then
+	sbatch runBwaAln.sb
+else
+	sbatch runBwaIndex.sb
+fi

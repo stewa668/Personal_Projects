@@ -1,0 +1,42 @@
+# magma is a GPU enabled lapack library
+# to use, ensure  CUDA/5.0 library loaded 
+
+(1) Table of content
+
+README: This file.
+Source code:
+    dgesv_gpu.cpp
+    flops.h
+    testings.h
+    testing_util.cpp
+Makefile: for build the executable.
+run.qsub: job script for summiting to batch queue.
+
+(2) To run the program interactively
+
+NOTE: make sure that you are on a node that have GPU card.
+For example, dev-intel14-k20 or dev-intel16-k80 or any compute
+node from "qsub -I -l nodes=1:ppn=1:gpus=1,mem=1GB,walltime=10:00,feature=gpgpu"
+
+# loading magma (both versions of MAGAM are tested)
+
+module purge
+module load GCC/6.4.0-2.28  OpenMPI/2.1.2        
+module load magma/2.3.0-CUDA-9.1.85 imkl/2018.1.163
+
+# build:
+
+make clean
+make
+
+# run:
+
+To see the help:
+./dgesv_gpu.exe -h
+
+To run with all default setting
+./dgesv_gpu.exe
+
+(2) Run in batch
+sbatch run.qsub
+

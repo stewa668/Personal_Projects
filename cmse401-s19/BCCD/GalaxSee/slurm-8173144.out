@@ -1,0 +1,22 @@
+GalaxSee.cxx-mpi: Gal.cpp:156: void setupWindow(int, int): Assertion `dpy' failed.
+[css-124:111790] *** Process received signal ***
+[css-124:111790] Signal: Aborted (6)
+[css-124:111790] Signal code:  (-6)
+[css-124:111790] [ 0] /lib64/libc.so.6(+0x35270)[0x2ae753280270]
+[css-124:111790] [ 1] /lib64/libc.so.6(gsignal+0x37)[0x2ae7532801f7]
+[css-124:111790] [ 2] /lib64/libc.so.6(abort+0x148)[0x2ae7532818e8]
+[css-124:111790] [ 3] /lib64/libc.so.6(+0x2e266)[0x2ae753279266]
+[css-124:111790] [ 4] /lib64/libc.so.6(+0x2e312)[0x2ae753279312]
+[css-124:111790] [ 5] /mnt/home/stewa668/cmse401-s19/BCCD/GalaxSee/GalaxSee.cxx-mpi[0x401758]
+[css-124:111790] [ 6] /mnt/home/stewa668/cmse401-s19/BCCD/GalaxSee/GalaxSee.cxx-mpi[0x40155f]
+[css-124:111790] [ 7] /mnt/home/stewa668/cmse401-s19/BCCD/GalaxSee/GalaxSee.cxx-mpi[0x4012cb]
+[css-124:111790] [ 8] /lib64/libc.so.6(__libc_start_main+0xf5)[0x2ae75326cc05]
+[css-124:111790] [ 9] /mnt/home/stewa668/cmse401-s19/BCCD/GalaxSee/GalaxSee.cxx-mpi[0x401353]
+[css-124:111790] *** End of error message ***
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 111790 on node css-124 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+
+real	0m4.150s
+user	0m0.049s
+sys	0m0.368s

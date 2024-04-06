@@ -1,0 +1,8 @@
+#!/bin/bash -logon
+
+#SBATCH salloc --time 04:00:00
+#SBATCH -N 1
+#SBATCH --ntasks-per-node 1
+
+run
+

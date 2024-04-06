@@ -1,0 +1,10 @@
+g++ 0212int.cpp -o 0212int
+
+TIMEFORMAT='%3R'
+for r in {1..5}
+do
+for i in `cat steps.txt` ;
+  do
+  time echo $i | ./0212int &>> out.txt 
+done
+done

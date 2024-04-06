@@ -1,0 +1,14 @@
+
+real	0m19.847s
+user	0m16.814s
+sys	0m2.970s
+Killed
+
+real	0m3.300s
+user	0m2.094s
+sys	0m0.495s
+Killed
+
+real	0m3.319s
+user	0m2.281s
+sys	0m0.558s

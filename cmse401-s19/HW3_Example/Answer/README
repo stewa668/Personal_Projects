@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Zach Stewart
+
+############################
+# BWA and SAMTools Example #
+############################
+
+##############################################################
+# In the example are the necessary outputs in order to run
+# SAMTools right away, but the submission script will likely 
+# 30 minutes to finish completely, and the folder size will 
+# also be quite large. (~4 Gb)
+# 
+# The example includes submission scripts for Indexing, 
+# Parallel Assembly, and Samtools preperation. Running
+# this README file will download all necessary files and 
+# submit all of the above through a single submission script.
+#
+# In order to run SAMTools without waiting, first
+#
+# decompress the file if it is compressed (has .gz)
+# do this with gzip -d {file}.gz
+#
+# then 
+# 
+# module load SAMtools
+#
+# then
+#
+# samtools tview DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1t_aln.bam Caenorhabditis_elegans.WBcel235.dna.toplevel.fa
+#
+###########################################################
+
+cp /mnt/scratch/colbrydi/BWA_Example_Data/DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1.fq.gz .
+cp /mnt/scratch/colbrydi/BWA_Example_Data/DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_2.fq.gz .
+wget ftp://ftp.ensembl.org/pub/release-95/fasta/caenorhabditis_elegans/dna/Caenorhabditis_elegans.WBcel235.dna.toplevel.fa.gz
+
+sbatch submit_all.sb

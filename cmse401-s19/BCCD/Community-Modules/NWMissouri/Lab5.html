@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Lab 5</title>
+  </head>
+  <body>
+    <p align="center"><b>Lab 5 (5 points)<br>
+        CS550, Operating Systems<br>
+        More on Parallel Programming</b></p>
+    <p align="right"> Name:
+      _____________________________________________ </p>
+    <p>To submit this assignment, you
+      may copy and paste the assignment into a text editor such as nano,
+      vi, notepad, MS Word, OpenOffice Writer, etc.&nbsp; Zip the code
+      and scripts showing the output of your solutions, and submit the
+      zip file to the dropbox for lab 5.&nbsp; The purpose of this
+      lesson is to learn to about load balancing and parallel
+      programming
+      using Threads and MPI Message Passing
+      (also known as Interprocess Communication) in the C programming
+      language.</p>
+      <p>This lab references
+      <a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt64.html">
+          http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt64.html</a>
+      and <a href="http://mathfaculty.fullerton.edu/mathews//n2003/montecarlopimod.html">
+          http://mathfaculty.fullerton.edu/mathews//n2003/montecarlopimod.html</a>.
+      </p>
+    <p>1. Download the code at this <a
+        href="serialMonteCarloPIGenerator.zip">link</a>.&nbsp; This code
+      computes PI using a Monte Carlo technique.&nbsp; PI is computed by
+      finding the proportion of the number of samples that fall within a
+      circle that is circumscribed within a square to the number of
+      total samples.&nbsp; Convert the file circle.c to evenly divide
+      the work between any number of pThreads.&nbsp; You may read in the
+      number of samples of threads using scanf.&nbsp; You may assume
+      that the number of samples can be evenly divided by the number of
+      threads.&nbsp; Turn in a copy of your code.&nbsp; You can compile
+      the code from the zip file as follows:<br>
+      <br>
+      <font face="Courier New">gcc mt19937-64.c circle.c -o circle.exe</font><br>
+    </p>
+    <p>2. Save your code from problem 1.&nbsp; Make a copy of it.&nbsp;
+      Convert this code to work with any number of processes in C/MPI
+      using non-blocking sending and receiving to complete your
+      work.&nbsp; One process should act as the server and should
+      receive and accumulate all the data from worker processes that
+      will perform computations.&nbsp; You should read in the number of
+      samples from the command line in the same manner as you did in
+      Project 2.&nbsp; You may assume that the number of samples can be
+      evenly divided by the number of processes. Turn in a copy of your
+      code.&nbsp; After writing your code, you can compile it as
+      follows:<br>
+      <br>
+      <font face="Courier New">mpicc mt19937-64.c circle.c -o circle.exe</font><br>
+      <br>
+      3. Write a batch script for your code and run it on
+      Stampede.&nbsp; Turn in a copy of your batch script and your
+      output file.&nbsp; Try using a large sample size and a high core
+      count like 12,700,000,000 samples and 128 cores (remember that 1
+      core will be used for the server process).<br>
+    </p>
+    4. Convert the fixed race condition (the one using semaphores)
+    program to work with any number of incrementers and
+    decrementers.&nbsp; You may assume that the number of incrementers
+    and decrementers is the same and that it is read in from the
+    keyboard.<br>
+  </body>
+</html>
+
+<p align=left style="font-size: 10pt; color: black; background: white"><b>DISCLAIMER OF LIABILITY:</b>
+The individual to whom this page pertains is solely responsible for the information, 
+content or materials contained in it. Because Northwest Missouri State University 
+has no involvement in managing the content of this page, 
+Northwest will not be liable for any damages of any kind arising from the use of it, 
+including, but not limited to direct, indirect, incidental, punitive, and consequential damages.
+</p>
+
+

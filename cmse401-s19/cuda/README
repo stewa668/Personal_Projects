@@ -1,0 +1,22 @@
+#!/bin/bash
+# Simple example to get started running a cuda program
+
+# Contents of directory:
+# simple.cu; program that utilizes the cuda library to print an array
+# simple_cuda.sb; qsub script
+
+# Load the required modules
+module load CUDA 
+module load GCC/4.9.3-2.25
+
+# Compile the example
+nvcc simple.cu -o simple_cuda
+
+# Run the example on the command line
+./simple_cuda
+
+# Submit a cuda job to the queue
+sbatch simple_cuda.sb
+
+# Note: to submit a job using torque, type
+qsub simple_cuda.qsub

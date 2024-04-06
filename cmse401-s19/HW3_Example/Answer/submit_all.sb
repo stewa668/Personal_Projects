@@ -1,0 +1,31 @@
+#!/bin/bash --login
+########## Define Resources Needed with SBATCH Lines ########## 
+#SBATCH --time=01:00:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --ntasks=1                  # number of tasks - how many tasks (nodes) that you require (same as -n)
+#SBATCH --cpus-per-task=16           # number of CPUs (or cores) per task (same as -c)
+#SBATCH --mem=8G                    # memory required per node - amount of memory (in bytes)
+#SBATCH --job-name BWA_example      # you can give your job a name for easier identification (same as -J)
+#SBATCH -o %x.out 
+ 
+########## Command Lines to Run ##########
+ 
+module purge
+module load GCC/6.4.0-2.28  
+module load OpenMPI/2.1.1
+module load BWA/0.7.17                   ### load necessary modules, e.g.
+ 
+cd ${SLURM_SUBMIT_DIR} ### change to the directory of the submission
+ 
+srun bwa index -a bwtsw DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1.fq.gz 
+srun bwa index -a bwtsw DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_2.fq.gz             
+srun bwa index -a bwtsw Caenorhabditis_elegans.WBcel235.dna.toplevel.fa.gz
+
+srun bwa mem -t 16 Caenorhabditis_elegans.WBcel235.dna.toplevel.fa.gz DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1.fq.gz DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_2.fq.gz > DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1t_aln.sam  
+
+module load SAMtools/1.9
+
+samtools view -Sb DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1t_aln.sam > DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1t_aln.bam
+
+samtools sort DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1t_aln.bam -o DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1t_aln.bam
+
+samtools index DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1t_aln.bam

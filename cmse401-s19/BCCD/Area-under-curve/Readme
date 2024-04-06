@@ -1,0 +1,76 @@
+# $\Id$ 
+#
+# This file is part of BCCD, an open-source live CD for computational science
+# education.
+# 
+# Copyright (C) 2010 Andrew Fitz Gibbon, Paul Gray, Kevin Hunter, Dave Joiner, 
+#   Sam Leeman-Munk, Tom Murphy, Charlie Peck, Skylar Thompson, & Aaron Weeden 
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Area-Under The Curve:
+
+Calculating the area under a curve on graph is an important task in science.
+There are many applications of the area under a curve in many fields of science,
+including pharmacokinetics and clinical pharmacology, machine learning,
+medicine, neuroscience, psychiatry and psychology, chemistry, environmental
+science, fisheries and aquatic sciences, economics, and many others.
+
+The calculus developed by Isaac Newton and Gottfried Leibniz in the 17th century
+allows for the exact calculation of the area of simple curves through
+integration, but for many functions integrals do not exist for finding the area
+under their curves, or these integrals cannot be used to find the area in a
+reasonable number of steps. To compensate for this, other techniques can be used
+that provide acceptable approximations for the area under a curve. This module
+considers the Riemann method of integration, developed by Bernhard Riemann in
+the 19th century for approximating the area under a curve. 
+
+There are four methods of Riemann sum for approximating the area under curves on
+a graph. Right and left methods make the approximation using the right and left
+endpoints of each subinterval. Maximum and minimum methods make the
+approximation using the largest and smallest endpoint values of each
+subinterval. The values of the sums converge as the subintervals halve from
+top-left to bottom-right. The specific Riemann method explored in this module
+involves dividing the domain over which we are integrating into segments of
+equal width that serve as the bases of rectangles. The heights of the rectangles
+correspond to the y-value of the function for an x-value found somewhere within
+the rectangles widths. The sum of the areas of the rectangles formed by this
+method is the approximation of the area under the curve. This module considers
+the Left Riemann sum, in which each rectangle has the height of the left-most
+point of its width.
+
+For more information see AUC_Module_Document.pdf
+
+How to Build:
+  $ make 
+
+How To Run:
+
+  To run a program (e.g. serial) with the default domain width and default 
+  number of rectangles, use: ./area.serial
+
+  To run a program (e.g. openmp) with the default domain width and
+  100000 rectangles, use: ./area.c-openmp -n 100000
+
+  To run a program (e.g. mpi) with a domain from 100.0 to 200.0 and the default 
+  number of rectangles, use: ./area.c-mpi -l 100.0 -r 200.0
+
+  To run a program (e.g. hybrid) with a domain from 50.1 to 75.5 and with 
+  50000 rectangles, use: ./area.c-mpi-openmp -l 50.1 -r 75.5 -n 50000
+
+  To run a program (e.g. serial) with the default left x-boundary of the
+  domain and 500.0 as the right x-boundary of the domain with the
+  default number of rectangles, use: ./area.serial -r 500.0
+
+Credit Aaron Weeden for this explanation.

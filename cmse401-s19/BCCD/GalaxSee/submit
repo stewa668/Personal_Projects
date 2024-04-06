@@ -1,0 +1,2 @@
+#!/bin/bash
+time mpirun /mnt/home/stewa668/cmse401-s19/BCCD/GalaxSee/GalaxSee.cxx-mpi 10000

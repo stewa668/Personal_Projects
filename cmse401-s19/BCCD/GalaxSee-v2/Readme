@@ -1,0 +1,77 @@
+# $\Id$ 
+#
+# This file is part of BCCD, an open-source live CD for computational science
+# education.
+# 
+# Copyright (C) 2010 Andrew Fitz Gibbon, Paul Gray, Kevin Hunter, Dave Joiner, 
+#   Sam Leeman-Munk, Tom Murphy, Charlie Peck, Skylar Thompson, & Aaron Weeden 
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+N-Body Problems: GalaxSee-v2
+
+One of the grand challenge problems in astronomy is the evolution and structure
+of the universe and galaxies. The universe is seen to have a structure of sheets
+and voids on a large scale. Galaxies are seen to often have a spiral structure
+that is difficult to explain. Space is not occupied by a homogeneous fluid, but
+by discrete particles that interact through gravity over long ranges. The N-body
+problem is the problem of predicting the motion of a group of celestial objects
+that interact with each other with respect to gravity.
+
+The N-Body problem is a problem in which more than 2 particles interact in such
+a way that every particle has the potential to interact with every other
+particle in a meaningful way. Typically this is defined to be any problem where
+you expect to see forces acting at a distance, such as gravitational
+interactions on astronomical spatial scales, or electroweak interactions on
+molecular spatial scales. The characteristics of the N-Body problem are that it
+has historically pushed the boundaries of our ability to handle both large
+computational problems and chaotic computational problems. BCCD Comes with two
+flavor or N-body problems, GalaxSee and GalaxSee-v2.
+
+GalaxSee-v2:
+
+GalaxSee-v2 is a computer code written to solve the N-Body problem for Newtonian
+gravity, studying problems such as orbital motion of satellites, moons, comets
+and planets; the collapse due to gravity and structure of clusters of stars and
+of galaxies; and the collapse of cold dark matter into the sheets and voids that
+make up the large scale structure of the universe. The source code for
+GalaxSeeHPC requires a unix-like environment, such as MacOS X, Linux, or the
+Cygwin environment for Windows users. You will also need a C compiler, and a
+working copy of "make". Additional libraries which are not required to use
+GalaxSeeHPC, but can extend the number of features available include the ability
+to display X11 graphics (top-down and side view) and to compile against the X11
+development libraries for basic X11 display; GD libraries to create snapshots in
+jpg format (top-down and side-view); OpenGL, SDL, and pthreads for interactive
+graphics with perspective; and FFTW3 for the ability to use
+Particle-Particle-Particle-Mesh force calculation along with periodic boundary
+conditions. If you do not have these features on your system, you can disable
+them in make before compiling the code.
+
+For More information See:
+  GalaxSee HPC Module 1.docx
+  GalaxSee HPC 1.1 Manual.docx
+  GalaxSee HPC Module 2.docx
+
+How to Build and Run:
+  $ make
+
+  Now to run the program on one node of your cluster, enter the following command:
+  $ time mpirun -np 1 -machinefile ~/machines ./galaxsee.mpi simple.gal
+
+  Notes: simple.gal is an input file. For More options uncomment the necessary
+  options either in the simple.gal file, or if running with FFTW, NetCDF, SLD,
+  Gadgate2, using the appropriate input files present in the GalaxSee-v2
+  directory.
+
+Credit Dave Joiner for this explanation.

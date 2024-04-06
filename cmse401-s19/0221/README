@@ -1,0 +1,3 @@
+gcc mandelbrot.c -fopenmp -lm
+display MandelbrotSetNEW.ppm
+Save how you want.

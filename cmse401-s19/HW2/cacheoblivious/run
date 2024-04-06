@@ -1,0 +1,42 @@
+#!/bin/bash
+
+echo "200\n\n\n" > times.txt
+{ time ./mt200 ; } 2>> times.txt
+{ time ./mt200 ; } 2>> times.txt
+{ time ./mt200 ; } 2>> times.txt
+
+echo "\n\n\n1000\n\n\n" >> times.txt
+{ time ./mt1000 ; } 2>> times.txt
+{ time ./mt1000 ; } 2>> times.txt
+{ time ./mt1000 ; } 2>> times.txt
+
+echo "\n\n\n5000\n\n\n" >> times.txt
+{ time ./mt5000 ; } 2>> times.txt
+{ time ./mt5000 ; } 2>> times.txt
+{ time ./mt5000 ; } 2>> times.txt
+
+echo "\n\n\n8000\n\n\n" >> times.txt
+{ time ./mt8000 ; } 2>> times.txt
+{ time ./mt8000 ; } 2>> times.txt
+{ time ./mt8000 ; } 2>> times.txt
+
+echo "\n\n\n10000\n\n\n" >> times.txt
+{ time ./mt10000 ; } 2>> times.txt
+{ time ./mt10000 ; } 2>> times.txt
+{ time ./mt10000 ; } 2>> times.txt
+
+echo "\n\n\n15000\n\n\n" >> times.txt
+{ time ./mt15000 ; } 2>> times.txt
+{ time ./mt15000 ; } 2>> times.txt
+{ time ./mt15000 ; } 2>> times.txt
+
+echo "\n\n\n20000\n\n\n" >> times.txt
+{ time ./mt20000 ; } 2>> times.txt
+{ time ./mt20000 ; } 2>> times.txt
+{ time ./mt20000 ; } 2>> times.txt
+
+echo "\n\n\n40000\n\n\n" >> times.txt
+{ time ./mt40000 ; } 2>> times.txt
+{ time ./mt40000 ; } 2>> times.txt
+{ time ./mt40000 ; } 2>> times.txt
+

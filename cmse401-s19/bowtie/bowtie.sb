@@ -1,0 +1,20 @@
+#!/bin/bash -login
+#SBATCH --time=00:10:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=5
+
+cd $SLURM_SUBMIT_DIR
+module purge
+module load icc/2017.4.196-GCC-6.4.0-2.28  impi/2017.3.196
+module load Bowtie2/2.3.4  
+
+mkdir $SLURM_JOBID
+cp campy* ./$SLURM_JOBID
+cd $SLURM_JOBID
+
+
+bowtie2-build campy.fa campy
+
+#ppn above should be 1 larger than -p below 
+time bowtie2 -p 4 -x campy -q  campy-pre-1m.fastq > campy-pre-1m.map
+

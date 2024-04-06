@@ -1,0 +1,41 @@
+LittleFe CPU Load Monitor Version 1.0
+June 11, 2013
+
+Developer: Zach Goodwyn
+Adviser: Dave Toth
+
+Description
+The LittleFe CPU Load Monitoring software was designed to give a real time
+display of the CPU utilization of each CPU core in the cluster. When the
+application is started, it opens an X window with six graphs. Each graph
+displays the CPU utilization for a node in the system. Since the LittleFe is
+comprised of six nodes with a dual core processor in each node, the blue and
+red colors on the graph denote the individual core information. The program
+uses MPI to gather the data needed from each node every second. The information
+is then used to update the graph on the display. Each graph holds the five most
+recent values for each core's utilization. When a new utilization value is
+added, the oldest value is bumped off the left edge of the graph. The data
+points are connected with straight lines. "Core One's", lines are drawn in
+Blue, while "Core Two's", line are drawn in red. Underneath each graph there is
+a label for each of the cores. Next to these labels, the numerical value for
+the core utilization is displayed in the appropriate color. To terminate the
+program, click on the "X" box on the upper right hand of the display.
+
+Using the CPU Monitor
+To use the CPU monitor, you must first compile the source code file into a
+binary file. Please note that the CPU Monitor software was designed to run with
+all 6 nodes of the LittleFe powered up. It has not been tested with fewer than
+6 nodes and we know that there will be problems if it runs with fewer than 6
+nodes powered up.
+
+Compiling the CPU Monitor Software
+Type 'make' and hit the Enter key. That produces a binary file called
+cpumonitor.
+
+Creating the Hosts File
+Run the 'bccd-snarfhosts' command.
+
+Running the Program
+To run the program, type
+    mpirun -np 6 --bynode -machinefile ~/machines-openmpi cpumonitor
+and hit the Enter key.

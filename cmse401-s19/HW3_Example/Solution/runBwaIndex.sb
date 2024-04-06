@@ -1,0 +1,29 @@
+#!/bin/bash --login
+########## Define Resources Needed with SBATCH Lines ##########
+ 
+#SBATCH --time=01:10:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH -N 1
+#SBATCH --ntasks-per-node 1
+#SBATCH --mem=50G                    # memory required per node - amount of memory (in bytes)
+#SBATCH --job-name Name_of_Job      # you can give your job a name for easier identification (same as -J)
+#SBATCH --mail-type=END,FAIL
+
+echo "=========================="
+echo "=========================="
+cat $0
+echo "=========================="
+echo "=========================="
+
+########## Command Lines to Run ##########
+module purge
+module load GCC/6.4.0-2.28  OpenMPI/2.1.1
+module load BWA/0.7.17                   ### load necessary modules, e.g.
+module load powertools
+module list
+ 
+time bwa index -a bwtsw Caenorhabditis_elegans.WBcel235.dna.toplevel.fa.gz 
+
+js -j $SLURM_JOB_ID     ### write job information to output file
+
+sbatch runBwaAln.sb
+

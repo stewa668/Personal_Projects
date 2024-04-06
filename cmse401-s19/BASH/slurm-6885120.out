@@ -1,0 +1,30 @@
+Hello from skl-025
+JobId=6885120 JobName=hwloc_ex.sh
+   UserId=colbrydi(390633) GroupId=cmse(2362) MCS_label=N/A
+   Priority=487649 Nice=0 Account=colbrydi QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:08 TimeLimit=02:00:00 TimeMin=N/A
+   SubmitTime=2019-01-14T10:25:26 EligibleTime=2019-01-14T10:25:26
+   AccrueTime=2019-01-14T10:25:26
+   StartTime=2019-01-14T10:25:26 EndTime=2019-01-14T12:25:26 Deadline=N/A
+   PreemptTime=None SuspendTime=None SecsPreSuspend=0
+   LastSchedEval=2019-01-14T10:25:26
+   Partition=general-long AllocNode:Sid=dev-intel14-k20:78028
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=skl-[025,126-127]
+   BatchHost=skl-025
+   NumNodes=3 NumCPUs=6 NumTasks=6 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=6,mem=30G,node=3,billing=4669
+   Socks/Node=* NtasksPerN:B:S:C=2:0:*:* CoreSpec=*
+   MinCPUsNode=2 MinMemoryNode=10G MinTmpDiskNode=0
+   Features=[intel11|intel14|intel16|intel18] DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/mnt/home/colbrydi/_CMSE401/cmse401-s19/HWLOC_Example/hwloc_ex.sh
+   WorkDir=/mnt/home/colbrydi/_CMSE401/cmse401-s19/HWLOC_Example
+   Comment=stdout=/mnt/home/colbrydi/_CMSE401/cmse401-s19/HWLOC_Example/slurm-6885120.out 
+   StdErr=/mnt/home/colbrydi/_CMSE401/cmse401-s19/HWLOC_Example/slurm-6885120.out
+   StdIn=/dev/null
+   StdOut=/mnt/home/colbrydi/_CMSE401/cmse401-s19/HWLOC_Example/slurm-6885120.out
+   Power=
+

@@ -1,0 +1,64 @@
+# $\Id$ 
+#
+# This file is part of BCCD, an open-source live CD for computational science
+# education.
+# 
+# Copyright (C) 2010 Andrew Fitz Gibbon, Paul Gray, Kevin Hunter, Dave Joiner, 
+#   Sam Leeman-Munk, Tom Murphy, Charlie Peck, Skylar Thompson, & Aaron Weeden 
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This is the home directory of the bccd user.  Each directory contains an
+module which illustrates one or more forms of parallel and/or distributed
+computing.  
+
+1) Modules contained in this directory: 
+
+  Area-under-curve
+  CUDA
+  GalaxSee
+  GalaxSee-v2
+  HPL-benchmark
+  Hello-world
+  Life
+  Molecular-dynamics
+  Pandemic 
+  Parameter-space
+  Sieve
+  StatKit
+  Tests
+  Tree-sort
+
+2) Instructions for building and running:
+
+There is a tree directory structure for building and running our modules.
+The top-level Makefile in ~bccd (this directory) includes all the necessary
+CFLAGS, LDFLAGS, LIBS, targets, and dependencies.  To build all the modules
+type "$ make build-all" in the terminal. This will recurse into each of the
+directories listed above and invokes make there.  To clean all created
+binaries type "make clean-all" in the terminal.
+
+The Makefile structure supports the following options:
+  NO_X11=1 to the make command line to omit X libraries.
+  DEBUG=1 to add -ggdb to CFLAGS
+  PROFILE=1 to add -pg to CFLAGS and LDFLAGS
+  STAT_KIT=1 to enable StatKit
+  
+These are added on the make command line like so:
+  $ make build-all STAT_KIT=1
+  
+The makefiles in each of the module directories support the same syntax 
+and options.
+
+For more information, questions, etc. send email to bccd-users@bccd.net

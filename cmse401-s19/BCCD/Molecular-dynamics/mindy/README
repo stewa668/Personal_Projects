@@ -1,0 +1,62 @@
+
+-- Mindy: a "minimal" molecular dynamics program
+-- Version 1.0
+
+Mindy is a very simple, serial molecular dynamics program derived
+from NAMD source code.  It's currently uses xplor parameter and
+structure files.  The program is written in very straightforward
+C++.  
+
+**** How to build:
+Unpack the distribution.  A directory named "mindy" will be created.  In
+the mindy directory are two subdirectories, "src" and "test".  The "src" 
+directory contains the source code and a Makefile to build mindy.
+
+Typing "make" within the src directory shoud build mindy using g++.  If
+you would like to build mindy using a different compiler or different 
+compiler flags, use one of the build targets in the Makefile or add a new one.
+
+The executable is named mindy_$ARCH, where ARCH is the platform.  by default,
+this is "g++".
+ 
+**** How to run:
+The command line syntax for mindy is:
+	mindy nsteps pdbfile psffile paramfile
+
+Nsteps specifies how many timesteps to take.  pdbfile and psffile are the 
+coordinate and structure files, respectively, of the system you want to 
+simulate.  paramfile is the name of your parameter file.  Both the psf file
+and the parameter must be in X-Plor format.  
+
+The test directory contains two sets of files which can be used as inputs
+for mindy.  "alanin" is a 66 atom polypeptide, and "brH" is a crystal structure
+of bacteriorhodopsin containing 3762 atoms.  Run alanin by typing
+
+	mindy 1000 alanin.pdb alanin.psf alanin.params
+
+at the command line.  If you are in the src directory this command line will
+run the example:
+
+./mindy_g++ 100 ../test/alanin.pdb ../test/alanin.psf ../test/alanin.params
+
+The name of the binary (mindy_g++ in this example) may be slightly different
+depending on the platform you are running under.
+
+**** Where to go from here:
+At the top of the source file Integrator.C, you'll find three #define's
+that set the cutoff parameters for the simulation.  You'll have to recompile
+mindy after changing these values.   
+
+Mindy does essentially everything that NAMD does, without all the complications
+that come with writing a scalable parallel program.  It uses the same force
+field, file formats, and essentially the same integrator.  As such, for people 
+just beginning molecular dynamics simulations, it's a good way to understand
+what's going on "under the hood".  NAMD's source code is freely available,
+so if you found tinkering with mindy worthwhile, you might have even more
+fun messing with the program that inspired it...
+
+Happy simulating. 
+
+Justin Gullingsrud
+justin@ks.uiuc.edu
+

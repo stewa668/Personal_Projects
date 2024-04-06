@@ -1,0 +1,132 @@
+# $\Id$ 
+#
+# This file is part of BCCD, an open-source live CD for computational science
+# education.
+# 
+# Copyright (C) 2010 Andrew Fitz Gibbon, Paul Gray, Kevin Hunter, Dave Joiner, 
+#   Sam Leeman-Munk, Tom Murphy, Charlie Peck, Skylar Thompson, & Aaron Weeden 
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+DESCRIPTION
+
+  This application is an implementation of Conway's Game of Life,
+  written in C. The Game of Life is an iterative process set up on a 
+  2-dimensional grid. Cells on the grid are either "alive" or "dead" 
+  and follow the following rules:
+
+    - If a cell is empty ("dead") and has exactly 3 neighbors, it has 
+      enough resources to be born without being overcrowded, and the 
+      next turn will be "alive"
+
+    - If a cell is alive and has 2 or 3 neighbors, it has resources 
+      without being overcrowded and will stay "alive".
+
+    - If a cell has less than 2 neighbors, it cannot get enough 
+      resources to survive and the next turn will be "dead".
+
+    - If a cell has more than 3 neighbors, it will be overcrowded and 
+      the next turn will be dead.
+
+  There are four different ways to compile and run this Game of Life
+  code:
+
+  (1) Traditional single-process implementation; no communication or
+      synchronization is done.
+
+  (2) Shared memory implementation using OpenMP. OpenMP is used to
+      create a number of threads equal to the number of cores on the
+      node and parallelize a handful of for loops.
+
+  (3) Distributed implementation using MPI. Each MPI process has its
+      own grid, sharing left and right boundaries with neighboring
+      processes.
+
+  (4) Hybrid implementation, combining OpenMP and MPI.
+
+COMPILING
+
+  A Makefile is included with this project to ease the compiling 
+  process. In all cases, a binary named "Life" will be created.
+
+  By default, running "make" with no options will compile all known
+  implementations with full graphical support via X11 libraries. These
+  can be compiled individually by their name, which can be found by running
+  `make help`. This will print the list of possible targets, each of which
+  builds a binary named Life.XXX where XXX is the name of the target.
+
+  Additionally, graphical support can be completely disabled by running
+  `make NO_X11=1` plus any of the desired targets.
+
+OPTIONS
+
+  This version of Life takes the following arguments:
+
+    -c|--columns number   Number of columns in grid.
+    -r|--rows number      Number of rows in grid.
+    -g|--gens number      Number of generations to run.
+    -i|--input filename   Input file. See README for format.
+    -o|--output filename  Output file.
+    -h|--help             This help page.
+    -t[N]|--throttle[=N]  Throttle graphical display. (N generations per second)
+    -x|--display          Use a graphical display.
+    --no-display          Do not use a graphical display.
+
+  If none of these are given, the following defaults are used:
+    Rows:        105
+    Columns:     105
+    Generations: 1000
+    Input file:  None
+    Output file: None
+    Throttle:    No
+    Display:     Yes
+
+  Note: --throttle has no effect if --no-display is given or NO_X11
+  is specified at compile time. If --throttle or -t are given without
+  a value, a default value of 60 generations/second will be used.
+
+  The input file should contain space-separated values, two per line. The
+  first line specifies the dimensions, columns and rows respectfully. Each
+  subsequent line gives the column,row for a living cell. Order has no effect.
+  Any coordinate not given is assumed to contain a dead cell.
+
+  For example, a 5x5 grid with three living cells:
+    5 5
+    1 2
+    2 2
+    3 5
+
+RUNNING
+
+  Each implementation is run a little differently:
+
+    Serial and OpenMP:
+      $ ./Life
+
+    MPI: (where <N> is the desired number of processes)
+      $ mpirun -np <N> ./Life
+
+    Hybrid MPI/OpenMP:
+      In order to properly gain benefits from the hybrid implementation,
+      you must ensure that MPI only creates one process per node. The
+      methods for doing this differ with each type of MPI. Check which
+      you're using with `module list`.
+
+      If OpenMPI:
+        $ mpirun -np <N> -bynode ./Life
+
+      If MPICH2:
+        Edit your machines file so that each node's name has ":1". Then
+        run as if compiled with just MPI.
+

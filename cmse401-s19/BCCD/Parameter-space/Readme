@@ -1,0 +1,59 @@
+# $\Id$ 
+#
+# This file is part of BCCD, an open-source live CD for computational science
+# education.
+# 
+# Copyright (C) 2010 Andrew Fitz Gibbon, Paul Gray, Kevin Hunter, Dave Joiner, 
+#   Sam Leeman-Munk, Tom Murphy, Charlie Peck, Skylar Thompson, & Aaron Weeden 
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Parameter Space:
+
+The parameter space model is a study of the dart game "301".  In the game of 
+301, you start at 301 points and work your way down to zero.  The board is 
+divided into 20 wedges, with the bull's-eye in the middle worth 25 points. 
+The ring around the outer edge is a double score, the inner ring is a triple 
+score, and the exact center of the bull's-eye is a double score. You get three 
+darts per turn, and except for the beginning and end of the game (which 
+require hitting the "double" ring) the goal is to score as high as possible.
+
+The origin of this model began in the dart league at Eammon's in Loudonville, 
+New York.  It was a friendly league, with lots of beginners, and lots of free 
+advice for beginners.  One piece of advice often given to players was that 
+if you missed a lot, then you should aim at the 1, so that when you miss you 
+will hit either the 20 or the 18. This advice seems suspicious, so we need 
+to make the following assumption before going further: Typical dart throws 
+will have a random direction from some 'aim point' and a normal distance 
+from some 'aim point.'
+
+We set up a Monte Carlo model to test each spot on the board to determine the 
+average score of a three dart throw if we aimed at that point, and we ran it 
+with different accuracy levels, where the accuracy level was defined as the 
+standard deviation of the normal distribution in distance from the "aim point."
+And then we wait. Monte Carlo models work by running random events multiple 
+times and averaging the results. If you want high accuracy, you may have to 
+run the model many times. The code here is a reproduction of that model, 
+designed to allow the user to visualize the solution as it progresses. It is 
+also designed to break the model up into pieces that can be solved in parallel 
+by different computers.
+
+How to Build and Run:
+  $ make 
+  
+  Now to run the program on one node of your cluster, enter the following command:
+  $ time mpirun -np 1 ./Param_space 101         101         200
+                #cpus               #radial+1   #angular+1  #averages
+
+Credit Dave Joiner for this explanation.

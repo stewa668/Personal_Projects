@@ -1,0 +1,9 @@
+#!/bin/bash --login
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --gres=gpu:1
+#SBATCH --time=01:00:00
+
+module load CUDA
+cd ${SLURM_SUBMIT_DIR}
+./simple_cuda

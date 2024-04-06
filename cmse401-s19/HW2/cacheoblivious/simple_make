@@ -1,0 +1,13 @@
+#!/bin/bash
+#module load GCCcore/7.3.0 ## WHY YOU NEED THIS ICER!!!!!
+module purge
+module load intel/2018b
+#module load ifort/2018.3.222-GCC-7.3.0-2.30
+icc -O0 mt200.cpp -o mt200
+icc -O0 mt1000.cpp -o mt1000
+icc -O0 mt5000.cpp -o mt5000
+icc -O0 mt8000.cpp -o mt8000
+icc -O0 mt10000.cpp -o mt10000
+icc -O0 mt15000.cpp -o mt15000
+icc -O0 mt20000.cpp -o mt20000
+icc -O0 mt40000.cpp -o mt40000

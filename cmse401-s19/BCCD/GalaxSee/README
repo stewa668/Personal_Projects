@@ -1,0 +1,66 @@
+# $Id: README 3946 2013-02-06 14:21:31Z amweeden06 $ 
+#
+# This file is part of BCCD, an open-source live CD for computational science
+# education.
+# 
+# Copyright (C) 2010 Andrew Fitz Gibbon, Paul Gray, Kevin Hunter, Dave Joiner, 
+#   Sam Leeman-Munk, Tom Murphy, Charlie Peck, Skylar Thompson, & Aaron Weeden 
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+How to run GalaxSee
+
+GalaxSee is designed to be run from a command line unix prompt. It solves 
+for the collapse of a rotating group of objects bound by gravity. You can 
+specify the number of masses, the mass per object, the running time for 
+the model, and whether or not to visualize the results.
+
+It is designed to be run as an MPI program. To get your MPI environment
+going, run this command in a terminal:
+
+$ bccd-snarfhosts -v
+
+You will get output back that will look like this if you are using OpenMPI
+(the default BCCD MPI implementation):
+
+node011.bccd.net slots=2
+node000 slots=2
+
+Or like this, if you are using MPICH2:
+
+node011.bccd.net:2
+node000:2
+
+In both cases, you have two slots on node000 and two on node011, for four
+slots total.
+
+You can verify which MPI implementation you have loaded with:
+
+   $ bccd-get-mpi
+
+This command will print "openmpi" if you have MPICH2 loaded, or "mpich2" if
+you have OpenMPI loaded.
+
+If you are using OpenMPI, use this command to run GalaxSee:
+
+  $ cp ~/machines-openmpi machines
+  $ mpirun -np 4 -machinefile machines ./GalaxSee.cxx-mpi 1000 500 400
+
+If you are using MPICH2, use these commands to run GalaxSee:
+
+  $ cp ~/machines-mpich2 machines
+  $ mpirun -np 4 ./GalaxSee.cxx-mpi 1000 500 400
+
+These commands assume a 4 node cluster running 1000 objects of 200 solar
+masses each for 1000 Myears, displaying the results in an X window.

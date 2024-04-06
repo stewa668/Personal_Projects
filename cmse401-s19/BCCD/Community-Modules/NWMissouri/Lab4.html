@@ -1,0 +1,389 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=ISO-8859-1">
+    <title>Lab 4</title>
+  </head>
+  <body>
+    <p align="center"><b>Lab 4 (5 points)<br>
+        CS550, Operating Systems<br>
+        Introduction to C-Style Dynamic Memory, POSIX Threads, Shared
+        Memory, and MPI Message Passing (IPC) </b></p>
+    <p align="right"> Name:
+      _____________________________________________ </p>
+    <p> This assignment is loosely based upon the UNIX labs from the
+      CS2351 course at Oklahoma State University, available at
+      cs.okstate.edu/newuser/index.html. To submit this assignment, you
+      may copy and paste the assignment into a text editor such as nano,
+      vi, notepad, MS Word, OpenOffice Writer, etc.&nbsp; Zip the code
+      and scripts showing the output of your solutions, and submit the
+      zip file to the dropbox for lab 4.&nbsp; The purpose of this
+      lesson is to learn to about dynamic memory allocation, POSIX
+      Threads, Shared Memory between processes, and MPI Message Passing
+      (also known as Interprocess Communication) in the C programming
+      language.</p>
+      <p>This lab uses code from Operating
+      System Concepts by Silbershatz, Galvin, and Gagne.</p>
+    <p>1. Complete the following program that requires dynamic array
+      allocation.&nbsp; Add code in place of the ". . ." locations
+      provided below.&nbsp; You may copy and paste the code below, but
+      be sure to convert it to ASCII, before attempting to compile.<br>
+    </p>
+    <p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+        #include &lt;stdlib.h&gt;<br>
+        <br>
+        void print_array(double *, int, char *);<br>
+        double * sum_arrays(double *, double *, int);<br>
+        <br>
+        int main(int argc, char ** argv)<br>
+        {<br>
+        &nbsp; //Declare a pointer to a double<br>
+        &nbsp; double * arrA;<br>
+        &nbsp; double * arrB;<br>
+        &nbsp; <br>
+        &nbsp; int size;<br>
+        &nbsp; int i;<br>
+        <br>
+        &nbsp; printf("Enter the array size: ");<br>
+        &nbsp; scanf("%d", &amp;size);<br>
+        <br>
+        &nbsp; //Allocate memory for array A.&nbsp; This must be casted
+        as a double pointer<br>
+        &nbsp; //because malloc returns a void pointer (void *).&nbsp; A
+        void pointer is a<br>
+        &nbsp; //pointer with no assigned type.<br>
+        &nbsp; arrA = (double *) malloc(sizeof(double)*size);<br>
+        &nbsp; <br>
+        &nbsp; //Do the same for array B.&nbsp; Note that B will be the
+        same size as A.<br>
+        &nbsp; ...<br>
+        <br>
+        &nbsp; //Store data in the arrays<br>
+        &nbsp; for(i = 0; i &lt; size; i++)<br>
+        &nbsp;&nbsp;&nbsp; arrA[i] = arrB[i] = i;<br>
+        <br>
+        &nbsp; double * arrC = sum_arrays(arrA, arrB, size);<br>
+        <br>
+        &nbsp; //print the arrays<br>
+        &nbsp; print_array(arrA, size, "A");<br>
+        &nbsp; print_array(arrB, size, "B");<br>
+        &nbsp; print_array(arrC, size, "C");<br>
+      </font></p>
+    <p><font face="Courier New">&nbsp; //Free (deallocate) arrays A, B
+        and C here.<br>
+        &nbsp; free( (void *) arrA);<br>
+        &nbsp; ...<br>
+        <br>
+        &nbsp; return 0;<br>
+        }<br>
+        <br>
+        //Complete the print_array and sum_array functions here.<br>
+        //Hint: the output format for print array is up to you, but
+        should include the name of the array.<br>
+        //Hint: you must allocate and return the array arrC within the
+        sum_arrays function.<br>
+        ...<br>
+        <br>
+      </font>2. Complete the following C program that uses four POSIX
+      threads that will add two matrices (arrays) of size 4 by n called
+      A and B and store them in a third array of size 4 by n called C,
+      where n is any integer greater than 0.&nbsp; This array should be
+      of type <font face="Courier New">static double **</font>.&nbsp;
+      You must allocate the array in your main function and fill it with
+      values.&nbsp; You may choose any values to place in your array,
+      but it is recommended that you use ones that are may be reproduced
+      and are easy to add.&nbsp; each thread must add one of the four
+      rows of A with the same row of B, storing the results in the
+      appropriate row of C.&nbsp; Your main function should print the
+      results of this addition.&nbsp; Part of the main method is
+      provided below.&nbsp; Hint: refer to the the code from lab 3.<br>
+    </p>
+    <p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+        #include &lt;stdlib.h&gt;<br>
+        #include &lt;pthread.h&gt;<br>
+        <br>
+        #define NUM_THREADS 4<br>
+        <br>
+        static double ** matrixA;<br>
+        //declare matrixB and matrixC here<br>
+        ...<br>
+        <br>
+        static int d2_size;<br>
+        <br>
+        //Define our thread function called matrix_add_thread<br>
+        void * matrix_add_thread(void *);<br>
+        <br>
+        int main(int argc, char ** argv)<br>
+        {<br>
+        &nbsp; pthread_t threadList[NUM_THREADS];&nbsp; //Declare a list
+        of threads<br>
+        <br>
+        &nbsp; int return_code;<br>
+        <br>
+        &nbsp; int i;&nbsp; //counter to keep track of the current
+        thread identifier<br>
+        &nbsp; int j;<br>
+        <br>
+        &nbsp; printf("Enter the size of the second dimension of the
+        matrix: ");<br>
+        &nbsp; scanf("%d", &amp;d2_size);<br>
+        <br>
+        &nbsp; matrixA = (double **) malloc(sizeof(double
+        *)*NUM_THREADS);<br>
+        &nbsp; //allocate the first dimension of each matrix here<br>
+        &nbsp; ...<br>
+        <br>
+        &nbsp; //Allocate the second dimension of each matrix<br>
+        &nbsp; for(i = 0; i &lt; NUM_THREADS; i++)<br>
+        &nbsp; {<br>
+        &nbsp;&nbsp;&nbsp; matrixA[i] = (double *)
+        malloc(sizeof(double)*d2_size);<br>
+        &nbsp;&nbsp;&nbsp; ...<br>
+        &nbsp; }<br>
+        <br>
+        &nbsp; //Initialize matrixA and matrixB here<br>
+        &nbsp; ...<br>
+        <br>
+        &nbsp; for(i = 0; i &lt; NUM_THREADS; i++)<br>
+        &nbsp; {<br>
+        &nbsp;&nbsp;&nbsp; printf("From main creating thread %d\n", i);<br>
+        &nbsp;&nbsp;&nbsp; return_code =
+        pthread_create(&amp;threadList[i], NULL, MatAddThread,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        (void *) ((long)i));<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; if(return_code != NULL)<br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("The return code from
+        thread %d is %d\n", i, return_code);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit(-1);<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+        &nbsp; }<br>
+        <br>
+        &nbsp; for(i = 0; i &lt; NUM_THREADS; i++)<br>
+        &nbsp; {<br>
+        &nbsp;&nbsp;&nbsp; return_code = pthread_join(threadList[i],
+        NULL);<br>
+        &nbsp;&nbsp;&nbsp; if(return_code != NULL)<br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("Unable to join thread
+        %d\n", i);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit(-1);<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+        &nbsp; }<br>
+        <br>
+        &nbsp; for(i = 0; i &lt; NUM_THREADS; i++)<br>
+        &nbsp;&nbsp;&nbsp; for(j = 0; j &lt; d2_size; j++)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("matrixC[%d][%d] = %lf\n"
+        , i, j, matrixC[i][j]);<br>
+        <br>
+        &nbsp; for(i = 0; i &lt; NUM_THREADS; i++)<br>
+        &nbsp; {<br>
+        &nbsp;&nbsp;&nbsp; free((void *) matrixA[i]);<br>
+        &nbsp;&nbsp;&nbsp; //Free the other matrices here<br>
+        &nbsp;&nbsp;&nbsp; ...<br>
+        &nbsp; }<br>
+        <br>
+        &nbsp; free((void *) matrixA);<br>
+        &nbsp; //Free matrixB and matrixC here<br>
+        &nbsp; ...<br>
+        <br>
+      </font><br>
+      <font face="Courier New"><font face="Courier New">&nbsp; //Kill
+          the main thread.<br>
+        </font>&nbsp; pthread_exit(NULL);<br>
+        <br>
+        &nbsp; return 0;<br>
+        }</font><br>
+      <font face="Courier New"><br>
+        //Complete the matrix_add_thread function here<br>
+        ...<br>
+        <br>
+      </font></p>
+    <p>To compile the program above assuming it is named <b>lab4Threads.c</b>,
+      use the following command on any Linux system:<br>
+    </p>
+    <p><font face="Courier New">gcc lab4Threads.c -pthread -o
+        lab4Threads.exe</font></p>
+    <p>3. Compile and run the two shared memory programs on the examples
+      page of the course website.&nbsp; Run both programs at the same
+      time in different windows.&nbsp; If you are using LittleFe, open
+      two PuTTY or ssh terminals to LittleFe.&nbsp; If you are using
+      BCCD, use two terminals to complete this program.&nbsp; Open one
+      program in one window and one in the other.&nbsp; Note that the
+      producer program must be started first.<br>
+    </p>
+    <p>To compile these programs above assuming they are named <b>shmem_producer.c</b>
+      and <b>shmem_consumer.c</b>, use the following commands on the
+      Littlefe cluster or another computer running the BCCD operating
+      system:<br>
+    </p>
+    <p><font face="Courier New">gcc shmem_producer.c -lrt -o shmemp.exe<br>
+      </font><font face="Courier New">gcc shmem_consumer.c -lrt -o
+        shmemc.exe</font><br>
+    </p>
+    <p>After running the two programs, modify the producer to put ten
+      digits (zero through nine), in shared memory.&nbsp; Once complete,
+      shared memory should contain 0123456789.&nbsp; This program should
+      pause for 1 second between each digit added (hint: use
+      sleep(1)).&nbsp; After a digit is added to the shared memory, be
+      sure to increment the shared memory pointer.&nbsp; Modify the
+      consumer to continuously print the data in shared memory.&nbsp;
+      The consumer should keep printing data for 20 seconds.&nbsp; You
+      will need to include time.h to allow for this action. <br>
+    </p>
+    4. Compile and run the following program on both Littlefe (Host
+    Name: littlefe.nwmissouri.edu) and Stampede (Host Name:
+    stampede.tacc.utexas.edu ).&nbsp; You should be able to login to
+    Stampede using PuTTY and your Stampede username.&nbsp; Note that you
+    are <b>not</b> allowed to run your program (also called a job) on
+    the login node.&nbsp; Instructions to submit, run, check, and, if
+    necessary, to kill a job follow after the program.&nbsp; Note that
+    Stampede runs a variation of Linux called CentOS.&nbsp; Most of the
+    commands you used on Littlefe such as ps, ls, cat, nano, etc., work
+    on Stampede.&nbsp; <br>
+    <p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+        #include &lt;stdlib.h&gt;<br>
+        #include "mpi.h"<br>
+        <br>
+        int main (int argc, char** argv)<br>
+        {<br>
+        &nbsp; int number_of_processes;<br>
+        &nbsp; int my_rank;<br>
+        &nbsp; int mpi_error_code;<br>
+        <br>
+        &nbsp; mpi_error_code = MPI_Init(&amp;argc, &amp;argv);<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; mpi_error_code =
+        MPI_Comm_rank(MPI_COMM_WORLD, &amp;my_rank);<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; mpi_error_code =
+        MPI_Comm_size(MPI_COMM_WORLD, &amp;number_of_processes);<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; //This is the server process.<br>
+        &nbsp;&nbsp;&nbsp; if(my_rank == 0)<br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("Hello from the
+        server!\n");<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mpi_error_code = MPI_Send("Hi
+        from server!", 16, MPI_CHAR, 1, 0, MPI_COMM_WORLD);<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("Message was sent from
+        server!\n");<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp; else<br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("Hello from the
+        client!\n");<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; char str[20];<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mpi_error_code = MPI_Recv(str,
+        20, MPI_CHAR, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);<br>
+        <br>
+        &nbsp;&nbsp; &nbsp;&nbsp; printf("The message received in the
+        client is: %s\n", str);<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+        <br>
+        &nbsp; mpi_error_code = MPI_Finalize();<br>
+        &nbsp; return 0;<br>
+        }</font><br>
+    </p>
+    <p>Save this program in a file named <b>messages.c</b> on Stampede
+      and on Littlefe.&nbsp; <br>
+    </p>
+    <p>Compile your program on the login node using the following
+      command.&nbsp; Note that this is ok because the compilation uses
+      very few resources.<br>
+    </p>
+    <p><font face="Courier New">mpicc messages.c -O3 -o messages.exe</font><br>
+    </p>
+    <p>Note that the executable file name matches exactly with what will
+      run in the batch script using <b>ibrun</b>.</p>
+    <p> </p>
+    <p>On Stampede, you must submit a batch script to run your
+      program.&nbsp; This means your job waits in a virtual line (a
+      queue) before it may run.&nbsp; The batch queue scheduler on
+      Stampede is called SLURM (Simple Linux Utility for Resource
+      Management).&nbsp; Write a SLURM batch script for your program as
+      follows:<br>
+    </p>
+    <p><font face="Courier New">#!/bin/bash<br>
+        #SBATCH -A TG-SEE120004&nbsp; #Account number<br>
+        #SBATCH -N 1 -n 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Request
+        1 node (blade) with 2 tasks (cores)<br>
+        #SBATCH -J messages &nbsp; &nbsp;&nbsp; #Job name<br>
+        #SBATCH -o msg.o%j&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; #Output file
+        name<br>
+        #SBATCH -p normal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        #Queue to use<br>
+        #SBATCH -t 00:01:00&nbsp;&nbsp;&nbsp; &nbsp; #Run (wall) time 1
+        min<br>
+        ibrun messages.exe</font><br>
+    </p>
+    <p>Save this batch script in a file called <b>messages.sbatch</b>
+      on Stampede.<br>
+    </p>
+    <p>Fix any errors in your program, and submit your program to the
+      batch queue using the following command:<br>
+    </p>
+    <p><font face="Courier New">sbatch messages.sbatch</font><br>
+    </p>
+    <p>Once your program finishes, the output will show up in a file
+      called <b>msg.oJobNumber</b>, where <b>JobNumber</b> is the job
+      number assigned to your job by Stampede.&nbsp; You can find this
+      file by using the <b>ls</b> command.&nbsp; <b><i>Turn in the
+          contents of this file.</i></b><br>
+    </p>
+    <p>While your program is in the batch, run the following commands on
+      Stampede.&nbsp; If necessary, submit your program to the batch
+      queue again and quickly run the commands below.&nbsp; Note that
+      the up and down arrow keys can be used to scroll through
+      previously issued commands.<br>
+      <br>
+      Recall that the following command allows for you to see all jobs
+      running on Stampede.<br>
+    </p>
+    <p><font face="Courier New">showq</font><br>
+    </p>
+    <p>You can check the status of your job using the following command:<br>
+    </p>
+    <p><font face="Courier New">squeue -u Username</font><br>
+    </p>
+    <p>Where Username is your Stampede username.<br>
+    </p>
+    <p>Note that you may have a program that runs in an infinite loop or
+      enters a condition called deadlock or livelock.&nbsp; To end such
+      a program that is running on Stampede, you may first determine the
+      job number using squeue as shown above and killing the program
+      with the following command:<br>
+    </p>
+    <p><font face="Courier New">scancel JobNumber</font><br>
+    </p>
+    <p>5. Modify the program above to send messages from the server to
+      15 different processes.&nbsp; This will require a loop to send
+      messages from the server (the "if" statement), but not in the
+      client (the "else" portion).&nbsp; Note that you will need to
+      modify the batch script to use a total of 16 tasks.&nbsp; Run this
+      program again using the command:<br>
+    </p>
+    <p><font face="Courier New">sbatch messages.sbatch</font></p>
+    <p>Once your program finishes, the output will show up in a file
+      called <b>msg.oJobNumber</b>, where <b>JobNumber</b> is the job
+      number assigned to your job by Stampede.&nbsp; You can find this
+      file by using the <b>ls</b> command.&nbsp; <b><i>Turn in your source
+          code, your modified batch script, and the contents of the
+          output file.</i></b> </p>
+  </body>
+</html>
+
+<p align=left style="font-size: 10pt; color: black; background: white"><b>DISCLAIMER OF LIABILITY:</b>
+The individual to whom this page pertains is solely responsible for the information, 
+content or materials contained in it. Because Northwest Missouri State University 
+has no involvement in managing the content of this page, 
+Northwest will not be liable for any damages of any kind arising from the use of it, 
+including, but not limited to direct, indirect, incidental, punitive, and consequential damages.
+</p>
+
+

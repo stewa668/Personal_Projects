@@ -1,0 +1,12 @@
+Make sure you 
+
+module load libpng
+
+before attempting to make
+
+
+also, do
+
+export OMP_SCHEDULE=static
+
+for best results

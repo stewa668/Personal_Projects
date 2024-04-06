@@ -1,0 +1,103 @@
+# $\Id$ 
+#
+# This file is part of BCCD, an open-source live CD for computational science
+# education.
+# 
+# Copyright (C) 2010 Andrew Fitz Gibbon, Paul Gray, Kevin Hunter, Dave Joiner, 
+#   Sam Leeman-Munk, Tom Murphy, Charlie Peck, Skylar Thompson, & Aaron Weeden 
+
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+This directory contains the testing framework and tests for the BCCD.  
+For more information see the source code.
+
+
+The BCCD Test Suite utilizes comparative testing. It runs its tests and compares 
+them against the results they had in a distribution / environment already known to work. 
+These  known good results are referred to as the "control." 
+
+If you do not have a directory "control" with the control results of the tests in 
+your ~bccd/tests folder, (if you're an end user you should) you can generate one on a 
+known good machine with the -c predicate:
+
+How to run:
+In either terminal, run 
+$ perl bccd_test_suite.pl -c --mail --mailto you@yourdomain.com
+
+How to Add more tests:
+
+Adding new tests has never been simpler:
+
+	1. Write a script in your favorite language.
+
+		- Make sure it knows what parser to use when executed (get to know #! ("shebang" if you 
+want to Google it) if you're not already acquainted)
+
+		- Take a look to see if a similar test already exists to avoid duplicated effort (see Note)
+
+	2. Save it in ~bccd/tests/scripts
+
+	3. If your script is not a test, but a diagnostic for relevant system data, drop it in 
+	the "system" subdirectory
+		- "system" tests are not included in control generation, and are always included in 
+		reports, even reports of success
+
+Note: There is a hidden subdirectory in the scripts directory .sharedcode. It is in 
+this directory that you should put the code shared by multiple tests. For instance, 
+the MPI tests all use the same general format and therefore are mostly handled by the 
+perlshared.pm module file in the .sharedcode directory.
+
+Current Tests and scripts:
+
+Test				|	Script	
+Gromacs			| gromacs.pl	
+R						|	r.pl			 		
+GalaxSee		|	mpitest.sh	
+Life				|	mpitest.sh	
+Param-Space	|	mpitest.sh	
+PSC_DX			|	NA	
+
+Test Needed to be added (Todo List):
+	
+	0- fix and test the issues with ~/../scripts/shared_code/perl_shared.pm
+	0a- fix test_defs.pm 
+
+	1- Automation 
+		- automate the testing process (More info-coming soon).
+
+	2. create new test for all the remaining BCCD Modules
+
+	3. Documentation
+
+	4. Liberation test is not working - need to be completed
+
+	5. compilers/libraries/packages test
+
+	6. etc
+
+	7. bccd functionality
+
+--=--ToDo List:
+- Live Mode:
+	- Test for all the Modules
+	- Test for Software Modules
+	- Test for etc..
+- Liberated Mode:
+	- Test for all the Modules
+	- Test for Liberations 
+	- Test for software Modules
+
+
+
+

@@ -1,0 +1,21 @@
+2019-02-07 18:55:49 URL: ftp://ftp-trace.ncbi.nih.gov/giab/ftp/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/NIST7035_TAAGGCGA_L001_R1_001.fastq.gz [1914722761] -> "NIST7035_TAAGGCGA_L001_R1_001.fastq.gz.7" [1]
+
+real	2m26.651s
+user	0m0.661s
+sys	0m4.598s
+R1 time
+
+2019-02-07 18:57:41 URL: ftp://ftp-trace.ncbi.nih.gov/giab/ftp/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/NIST7035_TAAGGCGA_L001_R2_001.fastq.gz [1954935121] -> "NIST7035_TAAGGCGA_L001_R2_001.fastq.gz.6" [1]
+
+real	1m51.871s
+user	0m0.602s
+sys	0m4.590s
+R2 Time
+
+2019-02-07 18:58:01 URL: ftp://ftp.ensembl.org/pub/release-95/fasta/caenorhabditis_elegans/dna/Caenorhabditis_elegans.WBcel235.dna.toplevel.fa.gz [30316631] -> "Caenorhabditis_elegans.WBcel235.dna.toplevel.fa.gz.7" [1]
+
+real	0m20.036s
+user	0m0.035s
+sys	0m0.166s
+Celegans Time
+

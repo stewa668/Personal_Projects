@@ -1,0 +1,5 @@
+#!/bin/bash
+module load GCCcore/7.3.0 ## WHY YOU NEED THIS ICER!!!!!
+module load intel/2018b
+module load ifort/2018.3.222-GCC-7.3.0-2.30
+ifort -O3 -fast stream.f -o stream.o

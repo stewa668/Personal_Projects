@@ -1,0 +1,58 @@
+[bwa_index] Pack FASTA... 1.22 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=200572802, availableWord=26113028
+[BWTIncConstructFromPacked] 10 iterations done. 43074434 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 79575970 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 112014578 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 140842098 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 166460034 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 189225266 characters processed.
+[bwt_gen] Finished constructing BWT in 66 iterations.
+[bwa_index] 55.35 seconds elapse.
+[bwa_index] Update BWT... 0.53 sec
+[bwa_index] Pack forward-only FASTA... 0.92 sec
+[bwa_index] Construct SA from BWT and Occ... 21.47 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: /opt/software/BWA/0.7.17-foss-2017b/bin/bwa index -a bwtsw Caenorhabditis_elegans.WBcel235.dna.toplevel.fa.gz
+[main] Real time: 82.031 sec; CPU: 79.494 sec
+
+real	1m22.958s
+user	0m0.021s
+sys	0m0.008s
+JobId=9106653 JobName=Index_Caenorhabditis
+   UserId=stewa668(857038) GroupId=chemistry(2001) MCS_label=N/A
+   Priority=523938 Nice=0 Account=general QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:01:33 TimeLimit=04:00:00 TimeMin=N/A
+   SubmitTime=2019-02-07T17:53:47 EligibleTime=2019-02-07T17:53:47
+   AccrueTime=2019-02-07T17:53:47
+   StartTime=2019-02-07T17:54:51 EndTime=2019-02-07T21:54:51 Deadline=N/A
+   PreemptTime=None SuspendTime=None SecsPreSuspend=0
+   LastSchedEval=2019-02-07T17:54:51
+   Partition=general-short AllocNode:Sid=dev-intel18:25038
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=css-126
+   BatchHost=css-126
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=1,mem=20G,node=1,billing=3112
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=20G MinTmpDiskNode=0
+   Features=[intel11|intel14|intel16|intel18] DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/mnt/home/stewa668/cmse401-s19/HW3_Example/runBwaIndex_slurm_giab.sb
+   WorkDir=/mnt/home/stewa668/cmse401-s19/HW3_Example
+   Comment=stdout=/mnt/home/stewa668/cmse401-s19/HW3_Example/%x.out 
+   StdErr=/mnt/home/stewa668/cmse401-s19/HW3_Example/Index_Caenorhabditis.out
+   StdIn=/dev/null
+   StdOut=/mnt/home/stewa668/cmse401-s19/HW3_Example/Index_Caenorhabditis.out
+   Power=
+
+   CPUTime     MaxRSS 
+---------- ---------- 
+  00:04:51            
+  00:04:51            
+  00:04:45            
+  00:01:29            
+  00:01:29            
+  00:01:22    102556K 

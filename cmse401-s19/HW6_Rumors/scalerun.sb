@@ -1,0 +1,18 @@
+#!/bin/bash --login
+########## Define Resources Needed with SBATCH Lines ##########
+ 
+#SBATCH --time=1:00:00             # limit of wall clock time - how long the job will run (same as -t)
+#SBATCH --ntasks=20                  # number of tasks - how many tasks (nodes) that you require (same as -n)
+#SBATCH --cpus-per-task=1           # number of CPUs (or cores) per task (same as -c)
+#SBATCH --mem=8G                    # memory required per node - amount of memory (in bytes)
+#SBATCH --job-name 2000x1000      # you can give your job a name for easier identification (same as -J)
+#SBATCH -o %x.out 
+ 
+########## Command Lines to Run ##########
+
+module load libpng
+
+for i in {2..20}
+do
+srun -n $i ./pmill
+done

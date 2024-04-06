@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <title>Lab 2</title>
+  </head>
+  <body>
+    <p align="center"><b>Lab 2 (5 points)<br>
+        CS550, Operating Systems<br>
+        Introduction to UNIX and C </b></p>
+    <p align="right"> Name:
+      _____________________________________________ </p>
+    <p> This assignment is based upon the UNIX labs from the CS2351
+      course at Oklahoma State University, available at
+      cs.okstate.edu/newuser/index.html. The purpose of this lesson is
+      to learn to use the various UNIX commands, to learn about command
+      line compilers, editors, and to establish an account with the
+      Extreme Science and Engineering Discovery Environment (XSEDE). It
+      is recommended that you complete this assignment with the Littlefe
+      cluster, however, you may use Cygwin, your own copy of BCCD, or
+      another Linux variant to complete it.<br>
+    </p>
+    <p><b>Command Line Compilers</b></p>
+    <p>First, you will experiment with the C command line compiler
+      called <b>gcc</b>.</p>
+    <p> Create a file called <b><font face="Courier New">hello_loop.c</font></b>
+      with <b><font face="Courier New">nano</font></b>. Type the
+      following code into the text editor: </p>
+    <p><font face="Courier New"> #include &lt;stdio.h&gt;<br>
+        <br>
+        int main(int argc, char ** argv)<br>
+        {<br>
+        &nbsp; int i;<br>
+        &nbsp; for(i = 0; i &lt; 100; i++)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("Hello %d\n", i)<br>
+        &nbsp;&nbsp;}<br>
+        } </font></p>
+    <p>Compile the code with the following command:</p>
+    <p><b><font face="Courier New, Courier, monospace"> gcc hello_loop.c
+          -o hello_loop.exe </font></b></p>
+    <p>What happened?
+      ______________________________________________________</p>
+    <p>Fix any errors in the code and recompile.</p>
+    <p>When running the code, you will use a <b>pipe</b> to send the
+      output of the program to another UNIX command called <b><font
+          face="Courier New">more</font></b>. Pipes are a one way form
+      of interprocess communication. Just like water, data flows through
+      a pipe in one direction. Execute your code as follows:</p>
+    <p><b><font face="Courier New">./hello_loop.exe | more</font></b></p>
+    <p>What happened?
+      ________________________________________________________</p>
+    <p>Use the spacebar and the "b" character to page up and page down
+      through your output. The "q" character will get you out of <b><font
+          face="Courier New">more</font></b>.</p>
+    <p>Many UNIX and Linux systems support <b><font face="Courier New">less</font></b>.
+      Try piping your program to <b><font face="Courier New">less</font></b>.
+      What happens?
+      ________________________________________________________</p>
+    <p>Next, you will experiment with another program using the C
+      command line compiler called <b>gcc</b>.</p>
+    <p> Create a file called <b><font face="Courier New">test_args.c</font></b>
+      with <b><font face="Courier New">nano</font></b>. Type the
+      following code into the text editor: </p>
+    <p><font face="Courier New"> #include &lt;stdio.h&gt;<br>
+        <br>
+        int main(int argc, char ** argv)<br>
+        {<br>
+        &nbsp;&nbsp;int i;<br>
+        &nbsp;&nbsp;if(argc &gt; 0)<br>
+        &nbsp;&nbsp;{<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;for(i = 0; i &lt; argc; i++)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf("%s\n", argv[i])<br>
+        &nbsp;&nbsp;}<br>
+        &nbsp;&nbsp;return 0;<br>
+        } </font></p>
+    <p>Compile the code with the following command:</p>
+    <p><b><font face="Courier New, Courier, monospace"> gcc test_args.c
+          -o test_args.exe </font></b></p>
+    <p>What happened?
+      ______________________________________________________</p>
+    <p>Fix any errors in the code and recompile.</p>
+    <p>When running the code, you will pass parameters into the code via
+      the command line. These parameters are called command line
+      arguments. Note that you can also use command line arguments in
+      Java. Execute your code as follows:</p>
+    <p><b><font face="Courier New">./test_args.exe arg1 arg2 arg3</font></b></p>
+    <p>What happened?
+      ________________________________________________________</p>
+    <p>Now execute your code as follows:</p>
+    <p><b><font face="Courier New">./test_args.exe</font></b></p>
+    <p>What happened?
+      ________________________________________________________</p>
+    <p>Complete the next program, and name it <b>lab2.c</b>:<br>
+    </p>
+    <p><font face="Courier New">//lab2.c<br>
+        //&lt;your name goes here&gt;<br>
+        //This program determines if a number is prime.<br>
+        <br>
+        #include &lt;stdio.h&gt;<br>
+        #include &lt;stdlib.h&gt;<br>
+        #include &lt;math.h&gt;<br>
+        <br>
+        int main(int argc, char ** argv)<br>
+        {<br>
+        &nbsp; //Declare and initialize a counter i and an input<br>
+        &nbsp; //variable num.<br>
+        &nbsp; int num, i = 2;<br>
+        <br>
+        &nbsp; //Read in num using scanf<br>
+        <br>
+        &nbsp; //Use a count controlled loop to check if num is prime.<br>
+        &nbsp; //Hint: use the sqrt function from the math library to<br>
+        &nbsp; //find the square root of num.<br>
+        &nbsp; while(...)<br>
+        &nbsp; {<br>
+        &nbsp;&nbsp;&nbsp; //Replace the ... in the if statement with
+        the condition to <br>
+        &nbsp;&nbsp;&nbsp; //determine if num is divisible by i<br>
+        &nbsp;&nbsp;&nbsp; if(...)<br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Print a message stating num is
+        not prime.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit(0);<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp; //increment i<br>
+        &nbsp; }<br>
+        <br>
+        &nbsp; //Print a message stating that num is prime.<br>
+        <br>
+        &nbsp; return 0;<br>
+        }<br>
+      </font></p>
+    <p>Hand in a printout of your code file (lab2.c), and a printout of
+      a sample output file you created.<br>
+    </p>
+    <p>To compile your program use the following command:<br>
+    </p>
+    <p><font face="Courier New">gcc lab2.c -lm -o lab2.exe</font><br>
+    </p>
+    To create an output file use the Unix command <font face="Courier
+      New">script</font>: <br>
+    <br>
+    <font face="Courier New">$ script lab2.out <br>
+      Script started, file is lab2.out <br>
+      $ ./lab2.exe<br>
+      &lt;run the program&gt; <br>
+      $ exit<br>
+      Script done, file is lab2.out </font>
+    <p><b>Introducing MPI</b><b><br>
+      </b><br>
+      Finally, you will experiment with the Message Passing Interface
+      (MPI) enhanced C command line compiler called <b>mpicc</b>. Note
+      that the MPI library allows for C programs to be executed as
+      multiple independent processes.</p>
+    <p> Create a file called <b><font face="Courier New">do_nothing.c</font></b>
+      with <b><font face="Courier New">nano</font></b>. Type the
+      following code into the text editor: </p>
+    <p><font face="Courier New"> #include &lt;stdio.h&gt;<br>
+        #include &lt;stdlib.h&gt;<br>
+        #include &lt;mpi.h&gt;<br>
+        <br>
+        int main(int argc, char ** argv)<br>
+        {<br>
+        &nbsp;&nbsp;int number_of_processes;<br>
+        &nbsp;&nbsp;int my_rank;<br>
+        &nbsp;&nbsp;int mpi_error_code;<br>
+        &nbsp;&nbsp;int i, j = 0;<br>
+        &nbsp;&nbsp;mpi_error_code = MPI_Init(&amp;argc, &amp;argv);<br>
+        &nbsp;&nbsp;&nbsp; mpi_error_code =
+        MPI_Comm_rank(MPI_COMM_WORLD, &amp;my_rank);<br>
+        &nbsp;&nbsp;&nbsp; mpi_error_code =
+        MPI_Comm_size(MPI_COMM_WORLD, &amp;number_of_processes);<br>
+        &nbsp;&nbsp;&nbsp; for(i = 0; i &lt; 100000000; i++)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = i + 1;<br>
+        &nbsp;&nbsp;&nbsp; printf("%d o%d: Hello, world!\n", my_rank,
+        number_of_processes);<br>
+        &nbsp;&nbsp;mpi_error_code = MPI_Finalize();<br>
+        &nbsp;&nbsp;return 0;<br>
+        } </font></p>
+    <p>Note that all the code inside of <b>MPI_Init</b> through <b>MPI_Finalize</b>
+      will run as <b>number_of_processes</b> processes. Compile the
+      code with the following command:</p>
+    <p><b><font face="Courier New, Courier, monospace"> mpicc
+          do_nothing.c -o do_nothing.exe<br>
+        </font></b></p>
+    <p>What happened?
+      ______________________________________________________</p>
+    <p>Fix any errors in the code and recompile.<br>
+    </p>
+    <p>Remove the line containing <b>MPI_Init</b> and recompile.<br>
+    </p>
+    <p>What happened?
+      ______________________________________________________<br>
+    </p>
+    <p>Replace the line containing <b>MPI_Init</b>, and remove the line
+      containing <b>MPI_Finalize</b> and recompile.<br>
+    </p>
+    <p>What happened?
+      ______________________________________________________</p>
+    <p>Replace the missing line in your code, fix all errors and
+      recompile.&nbsp; Open a second terminal (or PuTTY) window. If you
+      are opening a second window to a remote system such as Littlefe,
+      you will need to login again.&nbsp; Run the command called <b><font
+          face="Courier New, Courier, monospace">top</font></b>. This
+      command shows the current system statistics, including CPU usage
+      by each process, and it updates on a regular basis. Execute your
+      code as follows in the first terminal window:</p>
+    <p><b><font face="Courier New">mpirun -n 8 do_nothing.exe<br>
+        </font></b></p>
+    <p>On LittleFe use:<b><br>
+      </b></p>
+    <p><b><font face="Courier New">mpirun -n 8 -machinefile
+          machines-openmpi do_nothing.exe<br>
+        </font></b></p>
+    <p>Note that the <b>-n 8</b> tells the operating system to create 8
+      processes.</p>
+    <p>What happened in the first terminal window?
+      ________________________________________________________</p>
+    <p>What happened in the second terminal window?
+      ________________________________________________________</p>
+    <p>Replace the <b>-n 8</b> with <b>-n 16</b> to tell the operating
+      system to create 16 processes.&nbsp; Hint: you can use the up and
+      down arrows at the command line to scroll through your history of
+      commands.<br>
+    </p>
+    <p>What happened in the first terminal window?
+      ________________________________________________________</p>
+    <p>What happened in the second terminal window?
+      ________________________________________________________</p>
+    <p>Now press the character "q" in the second terminal window and run
+      the command:</p>
+    <p><b><font face="Courier New">mpirun -n 16 do_nothing.exe<br>
+        </font></b></p>
+    <p>On LittleFe use:<b><font face="Courier New"><br>
+        </font></b></p>
+    <p><b><font face="Courier New">mpirun -n 16 -machinefile
+          machines-openmpi do_nothing.exe<br>
+        </font></b></p>
+    <p>While the program is running, run the following command in the
+      second terminal window:</p>
+    <p><b><font face="Courier New">ps -fu username<br>
+        </font></b></p>
+    <p>Where <b>username</b> is your username.&nbsp; The <b>ps</b>
+      command outputs a list of the current running processes.</p>
+    <p>What happened in the first terminal window?
+      ________________________________________________________</p>
+    <p>What happened in the second terminal window?
+      ________________________________________________________</p>
+    <p><b>Using Other UNIX Commands</b></p>
+    <p>Using <b><font face="Courier New, Courier, monospace">nano</font></b>
+      write a short java program with an infinite loop. Compile and run
+      this program at the command line. While this program is running,
+      use <b><font face="Courier New, Courier, monospace">ps</font></b>
+      to find its process id number. Then use the <b><font
+          face="Courier New, Courier, monospace">kill</font></b> command
+      to terminate the process. Submit a copy of your code and the
+      output from <b><font face="Courier New, Courier, monospace">ps</font></b>
+      with this homework.</p>
+    <p>The <b><font face="Courier New, Courier, monospace">grep</font></b>
+      command allows you to find patterns in files. Run the command:</p>
+    <p><b><font face="Courier New, Courier, monospace">grep -n MPI
+          do_nothing.c</font></b> </p>
+    <p>What does the "-n" option
+      do?__________________________________________</p>
+    <p>Attach the output of the <b><font face="Courier New, Courier,
+          monospace">grep</font></b> command to this homework.</p>
+    <p>Investigate the <b><font face="Courier New, Courier, monospace">sort</font></b>,
+      <b><font face="Courier New, Courier, monospace">diff</font></b>,
+      and <b><font face="Courier New, Courier, monospace">uniq</font></b>
+      commands. The <b><font face="Courier New, Courier, monospace">man</font></b>
+      pages would also be a good place to look. Explain each in one or
+      two short sentences.<br>
+    </p>
+    <p>Run the command:<br>
+    </p>
+    <p><b><font face="Courier New, Courier, monospace">man sort</font></b>
+    </p>
+    <p>What does the <b><font face="Courier New, Courier, monospace">sort</font></b>
+      command
+      do?_____________________________________________________________________<br>
+__________________________________________________________________________________________________<br>
+    </p>
+    <p>Run the command:<br>
+    </p>
+    <p><b><font face="Courier New, Courier, monospace">man diff</font></b>
+    </p>
+    <p>What does the <font face="Courier New, Courier, monospace"><b>diff</b></font>
+      command
+      do?_____________________________________________________________________<br>
+__________________________________________________________________________________________________<br>
+    </p>
+    <p>Run the command:<br>
+    </p>
+    <p><b><font face="Courier New, Courier, monospace">man uniq</font></b>
+    </p>
+    <p>What does the <font face="Courier New, Courier, monospace"><b>uniq</b></font>
+      command
+      do?_____________________________________________________________________<br>
+__________________________________________________________________________________________________<br>
+    </p>
+    <p> </p>
+    <br>
+  </body>
+</html>
+
+<p align=left style="font-size: 10pt; color: black; background: white"><b>DISCLAIMER OF LIABILITY:</b>
+The individual to whom this page pertains is solely responsible for the information, 
+content or materials contained in it. Because Northwest Missouri State University 
+has no involvement in managing the content of this page, 
+Northwest will not be liable for any damages of any kind arising from the use of it, 
+including, but not limited to direct, indirect, incidental, punitive, and consequential damages.
+</p>
+
+

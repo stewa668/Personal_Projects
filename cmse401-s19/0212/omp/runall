@@ -1,0 +1,2 @@
+bash ./run2
+python plot.py

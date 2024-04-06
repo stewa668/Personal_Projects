@@ -1,0 +1,505 @@
+remarks   PARAMETER FILE FOR ALL EXPLICIT HYDROGENS BASED ON CFF PARAMETERS
+remarks   IN BRUCE GELIN'S THESIS (PARMFIX7 VALUES HAVE TRAILING 0'S)
+remarks   BOND ANGLE PARAMETERS INCLUDE THE HARMONIC CONTRIBUTION FROM
+remarks   Urey-Bradley F TERM ( (R13-R0)\2 )
+remarks   DIHEDRALS INCLUDE MULTIPLICITY FROM CFF
+remarks   MODIFIED TO INCLUDE HA AND CT
+remarks   HIS AND TRYP INCLUDED 4/13/80 DJS
+remarks   hbond parameters as in PARAM7 ( ATB, 3-APR-85 )
+remarks 
+remarks   modified: increased force constant on cis/trans peptide
+remarks   dihedrals
+remarks   increased improper force constants
+set echo=false end
+ 
+bonds H    NH2    405.0000    0.98
+bonds H    NH1    405.0000    0.98
+bonds H    OH1    450.0000    0.96
+bonds H    S      450.0000    0.96           !added, ATB and GMC, 30-SEP-85
+bonds H    OH2    450.0000    0.96
+bonds HA   CT     300.0000    1.08
+bonds HA   C      350.000     1.08
+bonds HC   NC2    405.0000    1.0
+bonds HC   NH1    405.000     0.98
+bonds HC   NH3    405.0000    1.04
+bonds C    C      250.0000    1.38
+bonds C    CT     187.0000    1.53
+bonds C    N      403.0000    1.305
+bonds C    NP     403.0000    1.305
+bonds C    NR     403.0000    1.305
+bonds C    NH1    403.0000    1.305
+bonds C    NH2    403.0000    1.305
+bonds C    NC2    403.0000    1.305
+bonds C    O      595.0000    1.215
+bonds C    OC     450.0000    1.22
+bonds C    OH1    450.0000    1.38
+bonds CT   CT     110.0000    1.53
+bonds CT   N      261.0000    1.49
+bonds CT   NH1    261.0000    1.49
+bonds CT   NH2    261.0000    1.49
+bonds CT   NH3    261.0000    1.49
+bonds CT   NC2    261.000     1.49
+bonds CT   OH1    400.0000    1.42
+bonds CT   S      450.0000    1.8100
+bonds S    S      500.0000    2.0200
+ 
+ 
+angle H    NH1  H       30.000   107.500
+angle H    NH1  C       35.3     120.0
+angle H    NH1  CT      40.4     120.0
+angle H    NH2  H       40.0000  120.0000
+angle H    NH2  C       35.3     120.0
+angle H    NH2  CT      40.4     120.0
+angle H    OH1  CT      35.0000  108.0000
+angle H    S    CT      35.0000  108.0000   ! added, ATB and GMC, 30-SEP-85
+angle H    OH1  C       35.0000  108.0000
+angle H    OH2  H       120.000  104.5000
+angle HC   NH3  HC      40.0000  109.5000
+angle HC   NH3  CT      40.0000  109.5000
+angle HC   NC2  HC      40.0000  120.0000
+angle HC   NC2  C       35.3     120.0
+angle HC   NC2  CT      40.4     107.5
+angle HA   C    C       41.0     120.0
+angle HA   C    NH1     41.0     120.0
+angle HA   C    NH2     41.0     120.0
+angle HA   C    NR      41.0     120.0
+angle HA   C    O       41.0     120.0
+angle HA   CT   HA      39.3     107.5
+angle HA   CT   C       49.3     107.5
+angle HA   CT   CT      30.000   108.000
+angle HA   CT   N       51.5     107.5
+angle HA   CT   NH1     51.5     107.5
+angle HA   CT   NH3     51.5     107.5
+angle HA   CT   NC2     51.5     107.5
+angle HA   CT   OH1     50.0     107.5
+angle HA   CT   S       40.000   107.500
+angle C    C    C       60.0000  126.5000
+angle C    C    CT      45.8     122.3
+angle C    C    NH1     50.0000  108.6000
+angle C    C    NP      70.0000  109.5000
+angle C    C    NR      70.0000  109.5000
+angle C    C    OH1     45.2     122.300
+angle C    CT   CT      51.8     107.5
+angle C    CT   N       43.7     108.6
+angle C    CT   NH1     43.7     108.6
+angle C    CT   NH2     43.7     108.0
+angle C    CT   NH3     43.7     108.0
+angle C    N    CT      62.3     119.100
+angle C    NH1  C       62.3     119.100
+angle C    NH1  CT      62.3     119.1000
+angle C    NC2  CT      62.3     107.500
+angle C    NP   C       50.0000  106.0000
+angle C    NR   C       50.0000  106.0000
+angle CT   C    N       49.5     115.7000
+angle CT   C    NH1     49.5     117.5000
+angle CT   C    NH2     49.5     120.000
+angle CT   C    O       64.6     122.3000
+angle CT   C    OH1     35.0000  117.5000
+angle CT   C    OC      40.0000  118.0000
+angle CT   CT   CT      51.1     107.500
+angle CT   CT   N       67.7     107.500
+angle CT   CT   NH1     67.7     107.1000
+angle CT   CT   NH2     67.7     108.9000
+angle CT   CT   NH3     67.7     108.9000
+angle CT   CT   NC2     67.7     107.500
+angle CT   CT   OH1     50.0000  101.5000
+angle CT   CT   S       50.0000  117.2000
+angle CT   N    CT      60.000   119.000
+angle CT   S    CT      50.0000   97.2000
+angle CT   S    S       50.0000  104.2000
+angle N    C    O       84.1     124.5000
+angle NH1  C    NC2     60.0000  117.0000
+angle NH1  C    NR      60.0000  117.0000
+angle NH1  C    O       60.0000  124.5000
+angle NH2  C    O       60.0000  120.6000
+angle NC2  C    NC2     60.0000  120.3000
+angle O    C    OH1     60.0000  124.5000
+angle OC   C    OC      50.0000  129.0000
+ 
+dihedral X    C    CT   X        1.2       3 0.0000
+dihedral X    C    N    X       5.0       2 180.0 !reduced to allow cis-PRO
+dihedral X    C    NH1  X       300.0      2 180.0 ! increased to avoid cis-pep
+dihedral X    C    NH2  X       11.6       2 180.000
+dihedral X    C    NC2  X       11.6       2 180.0000
+dihedral X    C    OH1  X        0.4       2 180.0000
+dihedral X    CT   CT   X        1.8       3 0.0000
+dihedral X    CT   N    X        2.1       3 180.0000
+dihedral X    CT   NH1  X        2.1       3 180.0000
+dihedral X    CT   NH2  X        1.8       2 180.0000
+dihedral X    CT   NH3  X        1.8       3 180.0000
+dihedral X    CT   NC2  X        2.1       3 0.000
+dihedral X    CT   OH1  X        0.6       3 180.0000
+dihedral X    CT   S    X        1.5       2 0.0000
+dihedral X    S    S    X        4.0000    2 0.0000
+ 
+improper H    X    X    C        500.0 0 0.000   !!
+improper H    X    X    NH1      500.0 0 0.0000  !! modified
+improper H    X    X    NH2      500.0 0 0.0000  !!
+improper H    X    X    O        500.0 0 0.0     !!
+improper HC   X    X    NH1      500.0 0 0.000   !!
+improper HC   X    X    NC2      500.0 0 0.0000  !!
+improper HC   X    X    NH3      500.0 0 0.0     !!
+improper HA   X    X    C        500.0 0 0.000   !!
+improper CT   C    N    CT       500.0 0 35.26439  !! added for proline 
+improper CT   C    NH1  CT       500.0 0 35.26439  !! added
+improper CT   C    NH3  CT       500.0 0 35.26439  !! added
+improper C    X    X    C        500.0  0 0.0000
+improper C    X    X    CT       500.0 0 0.0
+improper C    X    X    N        500.0 0 0.000
+improper C    X    X    NH1      500.0 0 0.0000
+improper C    X    X    NH2      500.0 0 0.000
+improper C    X    X    NC2      500.0 0 0.000
+improper C    X    X    NR       500.0 0 0.000
+improper C    X    X    O        500.0 0 0.0000
+improper C    X    X    OH1      500.0 0 0.0000
+improper C    X    X    OC       500.0 0 0.0000
+improper CT   X    X    N        500.0 0 0.000
+improper CT   X    X    NH1      500.0 0 0.000
+improper CT   X    X    NH3      500.0 0 0.000
+improper CT   X    X    NC2      500.0 0 0.000
+improper CT   X    X    NR       500.0 0 0.0000
+improper NH1  X    X    NH1      500.0 0 0.0000
+improper NH1  X    X    NR       500.0 0 0.0000
+!
+!! NONBONDED  NBXMOD=5  ATOM RDIEL SWITCH VSWITCH
+!!     CUTNB=8.0  CTOFNB=7.5  CTONNB=6.5  EPS=1.0  E14FAC=1.0  WMIN=1.5
+!
+ !                  eps     sigma       eps(1:4) sigma(1:4)
+ NONBonded  C       0.0903   3.2072      0.0903   3.2072
+ NONBonded  CT      0.0903   3.2072      0.0903   3.2072
+ NONBonded  H       0.0498   1.4254      0.0498   1.4254
+ NONBonded  HA      0.0045   2.6157      0.0045   2.6157
+ NONBonded  HC      0.0498   1.4254      0.0498   1.4254
+ NONBonded  N       0.1592   2.7618      0.1592   2.7618
+ NONBonded  NC2     0.1592   2.7618      0.1592   2.7618
+ NONBonded  NH1     0.1592   2.7618      0.1592   2.7618
+ NONBonded  NH2     0.1592   2.7618      0.1592   2.7618
+ NONBonded  NH3     0.1592   2.7618      0.1592   2.7618
+ NONBonded  NP      0.1592   2.7618      0.1592   2.7618
+ NONBonded  NR      0.1592   2.7618      0.1592   2.7618
+ NONBonded  O       0.2342   2.6406      0.2342   2.6406
+ NONBonded  OC      1.0244   2.6406      1.0244   2.6406
+ NONBonded  OH1     0.2342   2.6406      0.2342   2.6406
+ NONBonded  OH2     0.2342   2.6406      0.2342   2.6406
+ NONBonded  S       0.0239   3.3854      0.0239   3.3854
+ 
+!! H        0.0440    1.0000    0.8000
+!! HC       0.0440    1.0000    0.8000
+!! HA       0.1       1.000     1.468
+!! C        0.98      5.0000    1.8
+!! CT       0.98      5.0000    1.8 
+!! NP       0.74      6.0000    1.55
+!! NR       0.74      6.0000    1.55
+!! N        0.74      6.0000    1.55
+!! NH1      0.74      6.0000    1.55
+!! NH2      0.74      6.0000    1.55
+!! NH3      0.74      6.0000    1.55
+!! NC2      0.74      6.0000    1.55
+!! O        0.8       6.0000    1.482
+!! OH1      0.8       6.0000    1.482
+!! OH2      0.8       6.0000    1.482
+!! OC       2.1400    6.0000    1.482
+!! S        0.3400   16.0000    1.9000
+!! FE       0.0100    0.0001    0.6500
+!
+!! HBOND AEXP=4 REXP=6 HAEX=4 AAEX=2   ACCEPTORS
+!!     CUTHB=4.5 CTOFHB=4.0 CTONHB=3.5  CUTHA=90.0  CTOFHA=70.0  CTONHA=50.0
+!
+AEXP 4
+REXP 6
+HAEX 4
+AAEX 2
+!                   Emin      Rmin
+!                (Kcal/mol)   (A)
+hbond N*+* N%      -3.00      3.0!  VALUES FROM VINOGRADOV AND LINELL FOR
+hbond N*+* O*      -3.50      2.9!  TYPICAL LENGTHS AND DEPTHS.
+hbond OH*  N%      -4.00      2.85
+hbond OH*  O*      -4.25      2.75
+hbond S    N%      -3.00      3.0 !! added, ATB
+hbond S    O*      -3.50      2.9 !! added, ATB
+ 
+set echo=true end
+remarks   parambr_H_n.est (based on PARMallh3x.EST)
+remarks   ===========
+remarks   
+remarks   estimated parameters for bacteriorhodopsin
+remarks
+remarks   updated 1/19/93 by Bill Humphrey and Ilya Logunov
+remarks	  Retinal parameters from:
+remarks		Santarsiero, B. D.,   James, M. N. G.
+remarks		J. Am. Chem Soc.  Vol 112, No. 25, 1990  pp 9416-9418
+remarks	  goofball CN1 and CN2 atom type parameters commented out.
+remarks   Retinal torsional barriers modified 2/7/93 by B.H
+                
+set echo=false end
+
+
+!>>>> bond parameters
+!>>>> format: BOND <type1> <type2> <force const k> <length L0>
+! the following bond parameters are guesses for retinal <-------
+BOND CPA  CT     405.0  1.52
+BOND CPA  CPA    450.0  1.36
+BOND CPA  CS     405.0  1.52
+BOND CT   CS     110.0  1.53
+bond HC   NP     405.0  1.00  !as for HC NC2
+bond HA   NH1    405.0  0.98  !as for H  NH1
+bond HA   OC     450.0  0.96  !as for H  OH2 (in parmall3x.pro)
+
+bond C1   C2     110.0  1.53
+bond C1   C6     405.0  1.52
+bond C1   CT     110.0  1.53
+bond CT   C4     110.0  1.53
+bond C4   C5     405.0  1.52
+bond C5   C6     450.0  1.349
+bond C6   C7     345.0  1.458
+bond C7   C8     565.0  1.336
+bond C8   C9     405.0  1.455
+bond C9   C10    565.0  1.354
+bond C10   C11   345.0  1.429
+bond C11   C12   565.0  1.357
+bond C12   C13   405.0  1.419
+bond C13   C14   565.0  1.368
+bond C14   C15   565.0  1.399
+bond C15   NP    471.0  1.324
+bond NP    CT    405.0  1.428
+bond CS    C6    405.0  1.52
+bond C5    CT    405.0  1.52
+bond C9    CT    405.0  1.52
+bond C13   CT    405.0  1.52
+bond HA    C4    300.0  1.08
+bond HA    C7    300.0  1.08
+bond HA    C8    300.0  1.08
+bond HA    C10   300.0  1.08
+bond HA    C11   300.0  1.08
+bond HA    C12   300.0  1.08
+bond HA    C14   300.0  1.08
+bond HA    C15   300.0  1.08
+
+
+!>>>> angle parameters
+!>>>> format: ANGLE <type1> <type2> <type3> <force const k> <equil angle t0>
+angle HC   NP   CPA     35.0 120.0!as for C NC2 HC
+angle HA   NH1  CT      40.4     120.0 ! as for H NH1 CT, added B. Humphrey
+angle HA   NH1  HA      30.000   107.5 ! as for H NH1 H, added B. Humphrey
+ANGLE CPA  CS   CT    70.0 117.1 ! changed for retinal
+ANGLE CS   CPA  CPA     65.0 94.87 ! changed for retinal
+ANGLE CS   CT   CT    50.0 114.0 ! changed for retinal
+ANGLE CT   CS   CT    50.0 111.5
+ANGLE CT CPA  CPA     65.0 120.0 ! changed for retinal
+angle CPA  CT CT    65.0 112.5!
+angle CPA  CT   NH1     67.7     107.1000 ! as for CT CT NHA, added by B.H.
+angle CT   CPA  CT    65.0 112.6!
+angle CT   NH1  CT      62.3     119.1000 ! as for C NH1 CT, added by B.H.
+angle HA   CT   NP      30.000   108.000
+angle HA   CT   NH      30.000   108.000 ! added by B.H. and F.Z.
+angle HA   CT   CS      30.000   108.000
+angle HA   CT   CPA      30.000   108.000
+ANGLE NP   CT  CT    65.0 111.5
+angle HA   OC     C         35.0000  108.0   ! same as H    OH1  C 
+angle HA   CT    NH2     41.0     120.0		! same as HA C NH2 from x-plor
+
+angle C2  C1  C6      70.0     117.1
+angle C2  C1  CT      50.0     111.5
+angle CT  C1  CT      50.0     111.5
+angle C1  CT  CT      50.0     114.0
+angle CT  C1  C6      70.0     117.1
+angle C4  C5  C6      70.0     124.2                                  
+angle C5  C6  C1      70.0     121.4                                  
+angle C7  C6  C1      70.0     120.6
+angle C5  C6  C7      70.0     118.0 
+angle C6  C7  C8      70.0     129.7
+angle C7  C8  C9      70.0     125.6                                  
+angle C8  C9  C10     70.0     117.8                                  
+angle C9  C10  C11    70.0     127.7                                  
+angle C10  C11  C12   70.0     121.1                                  
+angle C11  C12  C13   70.0     127.3                                  
+angle C12  C13  C14   70.0     116.2                                  
+angle C13  C14  C15   70.0     125.0                                  
+angle C14  C15  NP    70.0     124.2
+angle CT  C4  C5      65.0     112.5
+angle CT  CT  C4      65.0     112.5
+angle CS  C6  C5      65.0     94.8
+angle CT  CS  C6      70.0     117.1    
+angle C8  C9  CT      65.0     121.1
+angle C10  C9  CT     65.0     121.1
+angle C12  C13  CT    65.0     121.9
+angle C14  C13  CT    65.0     121.9
+angle C4   C5   CT    65.0     117.9
+angle C6   C5   CT    65.0     117.9
+angle C15  NP   CT    70.0     104.0
+angle CT   C4   HA    30.0     108.0
+angle C5   C4   HA    30.0     108.0
+angle C6   C7   HA    41.0     115.15
+angle C8   C7   HA    41.0     115.15
+angle C7   C8   HA    41.0     117.2
+angle C9   C8   HA    41.0     117.2
+angle C9   C10  HA    41.0     116.15
+angle C11  C10  HA    41.0     116.15
+angle C10  C11  HA    41.0     119.45
+angle C12  C11  HA    41.0     119.45
+angle C11  C12  HA    41.0     116.35
+angle C13  C12  HA    41.0     116.35
+angle C13  C14  HA    41.0     117.5
+angle C15  C14  HA    41.0     117.5
+angle C14  C15  HA    41.0     117.9
+angle NP   C15  HA    41.0     117.9
+angle C15  NP   HC    35.0     120.0
+angle CT   NP   HC    35.0     120.0
+angle C1   CT   HA    30.0     108.0 
+angle C4   CT   HA    30.0     108.0
+angle C5   CT   HA    30.0     108.0
+angle C9   CT   HA    30.0     108.0
+angle C13  CT   HA    30.0     108.0
+angle HA   C4   HA    30.0     108.0
+                                   
+!>>>> dihedral parameters
+!>>>> format: DIHE <type1> <type2> <type3> <type4>  <force const k> 
+!>>>>		<periodicity n> <phase constant delta>
+dihe X   CPA   CPA   X  23.5       2     180.0
+dihe X   CPA   CT  X   1.0       3       0.0
+dihe X   CPA   CS    X   1.0       3       0.0
+dihe X   CS    CT  X   1.6       3       0.0
+dihe CPA CPA   CS    CT 10.0      3     180.0 ! ring-methyl groups
+dihe X    C    OC    X   0.4      2     180.0 ! from X C OH1 X in parmall3x.p
+
+{
+! These dihedrals use the old ground-state torsional barriers,
+! before 2/7/93 discussion
+DIHEdral C5   C6   C7   C8      10.0     2     176.6
+DIHEdral C6   C7   C8   C9      23.5     2     176.6 
+DIHEdral C7   C8   C9   C10     10.0     2     176.6 
+DIHEdral C8   C9   C10  C11     23.5     2     176.6 
+DIHEdral C9   C10  C11  C12     10.0     2     176.6  
+DIHEdral C10  C11  C12  C13     23.5     2     176.6 
+DIHEdral C11  C12  C13  C14     10.0     2     176.6
+DIHEdral C12  C13  C14  C15     23.5     2     176.6 
+DIHEdral C13  C14  C15  NP      10.0     2     176.6
+DIHEdral C14  C15  NP   CT      23.5     2     176.6
+DIHEdral C15  NP   CT   CT      1.0      3     0.0 
+DIHEdral C6   C5   C4   CT      1.0      3     0.0
+DIHEdral C5   C4   CT   CT      1.8      3     0.0
+DIHEdral C4   CT   CT   C1      1.8      3     0.0
+DIHEdral CT   CT   C1   C6      1.6      3     0.0
+DIHEdral CT   C1   C6   C5      10.0     3     180.0 
+}
+ 
+! Updated torsional barrier values, as of 2/7/93 ... B.H.
+DIHEdral C5   C6   C7   C8       2.5     2     176.6
+DIHEdral C6   C7   C8   C9      15.0     2     176.6 
+DIHEdral C7   C8   C9   C10      2.5     2     176.6 
+DIHEdral C8   C9   C10  C11     15.0     2     176.6 
+DIHEdral C9   C10  C11  C12      2.5     2     176.6  
+DIHEdral C10  C11  C12  C13     15.0     2     176.6 
+DIHEdral C11  C12  C13  C14      2.5     2     176.6
+DIHEdral C12  C13  C14  C15     10.0     2     176.6 
+DIHEdral C13  C14  C15  NP       5.0     2     176.6
+DIHEdral C14  C15  NP   CT      10.0     2     176.6
+DIHEdral C15  NP   CT   CT      1.0      3     0.0 
+DIHEdral C6   C5   C4   CT      1.0      3     0.0
+DIHEdral C5   C4   CT   CT      1.8      3     0.0
+DIHEdral C4   CT   CT   C1      1.8      3     0.0
+DIHEdral CT   CT   C1   C6      1.6      3     0.0
+DIHEdral CT   C1   C6   C5      10.0     3     180.0 
+ 
+
+!>>>> improper angle parameters
+!>>>> format: IMPR <type1> <type2> <type3> <type4>  <force const k> 
+!>>>>		<periodicity n> <phase constant delta>
+impr CPA   X    X    CS    50.0    0 180.0
+impr CPA   X    X    CT  50.0    0   0.0
+impr NP    X    X    CT  50.0    0   0.0 ! structure of ret better now?
+impr CT    CT   C    NH3   45.0    0   0.0
+impr CS    CPA  CPA  CT  50.0    0    0.0
+impr CS    CPA  CT CT  50.0    0  -32.0
+impr CS    CT CT CT  50.0    0   60.0
+impr CPA  X    X    CPA  100.0    0   0.0 !FROM C X X C
+impr CPA  X    X    HA  500.0    0   0.0 !FROM HA X X C
+impr CS   X    X    HA  500.0    0   0.0 !FROM HA X X C
+impr HA   X    X    NH1 500.0    0   0.0 !FROM H X X NH1
+impr C6   C5   C7   C1  50.0     0   0.0
+impr C1   C6   C5   C4  50.0     0   0.0
+impr C5   C4   CT   C6  50.0     0   0.0
+impr C9   C8   CT   C10 100.0    0   0.0
+impr C13  C12  CT   C14 100.0    0   0.0
+impr C7   X    X    HA  500.0    0   0.0
+impr C8   X    X    HA  500.0    0   0.0
+impr C10  X    X    HA  500.0    0   0.0
+impr C11  X    X    HA  500.0    0   0.0
+impr C12  X    X    HA  500.0    0   0.0
+impr C14  X    X    HA  500.0    0   0.0
+impr C15  X    X    HA  500.0    0   0.0
+impr NP   CT   HC   C15 50.0     0   0.0
+
+
+!! NONBONDED  NBXMOD=5  ATOM RDIEL SWITCH VSWITCH
+!!     CUTNB=8.0  CTOFNB=7.5  CTONNB=6.5  EPS=1.0  E14FAC=1.0  WMIN=1.5
+!
+ !                  eps     sigma       eps(1:4) sigma(1:4)
+ NONBonded  CS      0.0903   3.2072      0.0903   3.2072
+ NONBonded  C1      0.0903   3.2072      0.0903   3.2072
+ NONBonded  C4      0.0903   3.2072      0.0903   3.2072
+ NONBonded  C5      0.0903   3.2072      0.0903   3.2072
+ NONBonded  C6      0.0903   3.2072      0.0903   3.2072
+ NONBonded  C7      0.0903   3.2072      0.0903   3.2072
+ NONBonded  C8      0.0903   3.2072      0.0903   3.2072
+ NONBonded  C9      0.0903   3.2072      0.0903   3.2072
+ NONBonded  C10     0.0903   3.2072      0.0903   3.2072
+ NONBonded  C11     0.0903   3.2072      0.0903   3.2072
+ NONBonded  C12     0.0903   3.2072      0.0903   3.2072
+ NONBonded  C13     0.0903   3.2072      0.0903   3.2072
+ NONBonded  C14     0.0903   3.2072      0.0903   3.2072
+ NONBonded  C15     0.0903   3.2072      0.0903   3.2072
+
+! hydrogen bonding parameters (copied from parmallh3x.pro)
+!                   Emin      Rmin
+!                (Kcal/mol)   (A)
+hbond OT   N%	-4.00		2.85
+hbond OT   O*	-4.25		2.75
+hbond OC   O*	-4.25		2.75	! from hbond OT  O* on prev line
+hbond O*   NP	-3.50		2.9	! from NP O* line below
+hbond N*+* NP	-3.00		3.0
+hbond N*   OT	-4.00		2.85
+hbond NP   O*	-3.50		2.9
+hbond O*   OT	-4.25		2.75
+remarks   PARAM19.SOL (water parameters)
+remarks   ===========
+remarks   available: TIPS3P model
+
+set echo=false end
+
+
+{* TIP3P model *}
+{* =========== *}
+BOND HT   OT     450.0       0.9572    ! from TIPS3P geometry ( SHAKE w/PARAm)
+BOND HT   HT       0.0       1.5139    ! from TIPS3P geometry ( SHAKE w/PARAm)
+ANGLE HT   OT   HT      55.0     104.52    ! FROM TIPS3P geometry
+
+
+!	We're gonna NBFIX the TIP3P water-water interactions
+!	here to make them more like Jorgensen's.  The vdW parameters
+!	specified above will be in effect, therefore, for ONLY
+!	protein (read, protein OR nucleic acid)-water interactions.
+!	OT-OT is exactly Jorgensen's; HT interactions are added
+!	here.
+
+{* for solute-water interactions *}
+NONBONDED OT        0.1591   2.8509     0.1591   2.8509  !TIP3P water oxygen
+NONBONDED HT        0.0498   1.4254     0.0498   1.4254  !TIP3P water hydrogen
+
+! hydrogen bonding factors, parameters copied from parmall3xh.pro
+! hbond OT N%	-4.00	2.85
+! hbond OT O*	-4.25	2.75
+
+{* for water-water interactions *}
+!!-------------------EPS-------SIGMA---------EPS14---SIGMA14-----------------
+!! NONBONDED OT      0.1521   3.1506       0.1521  3.1506 !TIP3P water oxygen
+!! NONBONDED HT      0.04598  0.4000       0.04598 0.4000 !TIP3P water hydr.
+
+!! THIS SHOULD BE THE LAST NBFIX !! ANY NEW ATOM TYPE WILL USE 
+!! THESE PARAMETERS FOR MIXING RULES !!
+!---------------A--------------B--------------A14-----------B14-----
+nbfix ot  ot  581980.4948  595.0436396     581980.4948  595.0436396
+nbfix ht  ht  3.085665E-06 7.533363E-04    3.085665E-06 7.533363E-04
+nbfix ht  ot  327.8404792  10.47230620     327.8404792  10.47230620 
+
+set echo=true end

@@ -1,0 +1,24 @@
+#!/bin/bash -login
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=00:10:00
+#SBATCH --mem=2GB 
+#SBATCH --job-name=run_example 
+#SBATCH --constraint=intel16
+
+module purge
+module load GCC/6.4.0-2.28  OpenMPI/2.1.2        
+module load magma/2.3.0-CUDA-9.1.85 imkl/2018.1.163
+cd ${SLURM_SUBMIT_DIR}
+
+# build the executable if not yet exist 
+if [ ! -f "dgesv_gpu.exe" ]
+then
+    make clean
+    make
+fi
+
+./dgesv_gpu.exe 
+
+#print job information 
+scontrol show job ${SLURM_JOBID} 

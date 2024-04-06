@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0062)https://catpages.nwmissouri.edu/m/monismi/cs550/labs/lab1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <title>Lab 1</title>
+  </head>
+  <body>
+    <p align="center"><b> Lab 1 (5 points)<br>
+        CS550, Operating Systems<br>
+        Introduction to Linux and Command Line Compilation </b></p>
+    <p align="right"> Name:
+      _____________________________________________ </p>
+    <p> This assignment is based upon the UNIX labs from the CS2351
+      course at Oklahoma State University, available at
+      cs.okstate.edu/newuser/index.html. The purpose of this lesson is
+      to learn to use the nano editor, and to learn to use various UNIX
+      commands. </p>
+    <p> You should use the LittleFe system to complete this assignment.
+      Follow the instructions on the class website to login to
+      littlefe.nwmissouri.edu using the secure shell protocol
+      (ssh).&nbsp; </p>
+    <p> This homework includes both reading material and exercises.
+      Statements such as "Enter the following command..." or "Type..."
+      denote that you should type an appropriate response at the command
+      line to get a response from the operating system. UNIX commands
+      will be in bold font. Write answers in the spaces provided. </p>
+    <p> From the command line it is often necessary to use a text
+      editor. <b><font face="Courier New">nano</font></b> is a simple
+      text editor that you will learn to use in this assignment. </p>
+    <p> After opening a terminal, you will see some text followed by a $
+      (dollar prompt) and a cursor. You can type commands at this prompt
+      and run them by hitting the enter/return key. </p>
+    <p> At the $ prompt, run the command <b><font face="Courier New">nano
+
+          practice.txt</font></b> </p>
+    <p> What happens?
+      _____________________________________________________<br>
+      ___________________________________________________________________
+
+    </p>
+    <p> Using <b><font face="Courier New">nano</font></b>, you can type
+      in text, move the cursor using the arrow keys, delete characters
+      using the backspace key, and interact with text using the controls
+      shown at the bottom of the page. These controls are in the format
+      <b><font face="Courier New">^character</font></b>, meaning that
+      you would press and hold the Control key and press a character key
+      to run a command. For example, <b><font face="Courier New">^C</font></b>
+      (Control-C) shows the current cursor position. </p>
+    <p> Press <b><font face="Courier New">^C</font></b>, what happens?
+      _____________________________________ </p>
+    <p> Type the following text into the editor, only typing enter
+      whenever you see the &lt;cr&gt; symbol:<br>
+      <br>
+      <b><font face="Courier New"> The nano editor is a simple text
+          editor that is typically available in linux and &lt;cr&gt;<br>
+          UNIX. &lt;cr&gt; &lt;cr&gt;<br>
+          You can move the cursor around using the arrow keys.&lt;cr&gt;<br>
+          Delete a line.&lt;cr&gt;<br>
+          Put a line here.&lt;cr&gt;<br>
+          The controls are listed at the bottom of the page.<br>
+        </font></b></p>
+    <p> <b><u>Saving your work</u></b><br>
+      <br>
+      Before going any further it is best you learn to save your work.<br>
+      Save your work by pressing <b><font face="Courier New">^O</font></b>
+      (Control-O) and verifying the file name (typically by hitting
+      enter).<br>
+    </p>
+    <p> <b><u>Trying out nano</u></b><br>
+      <br>
+      Press <b><font face="Courier New">^C</font></b> (Control-C). What
+      happens? ________________________________________________<br>
+      <br>
+      Press <b><font face="Courier New">^V</font></b> (Control-V). What
+      happens? ________________________________________________<br>
+      <br>
+      Press <b><font face="Courier New">^Y</font></b> (Control-Y). What
+      happens? ________________________________________________<br>
+      <br>
+      Press <b><font face="Courier New">^W</font></b> (Control-W). What
+      happens? ________________________________________________<br>
+      <br>
+      Search for the word <b><font face="Courier New">Delete</font></b>
+      then press <b><font face="Courier New">^K</font></b> (Control-K).
+      What happens? ________________________________________________<br>
+      <br>
+      Move the cursor below the line containing the text "Put a line
+      here." Press <b><font face="Courier New">^U</font></b>
+      (Control-U). What happens?
+      ________________________________________________<br>
+      <br>
+      You now know many of the commands nano has to offer. <b><font face="Courier New">^C</font></b> (Control-C) allows you to see
+      the current cursor position. <b><font face="Courier New">^V</font></b>
+      (Control-V) and <b><font face="Courier New">^Y</font></b>
+      (Control-Y) let you page-up and page-down. To search for a
+      particular word in your code, you can use <b><font face="Courier
+          New">^W</font></b> (Control-W). Finally, to cut and paste
+      lines of text, you can use <b><font face="Courier New">^K</font></b>
+      (Control-K) and <b><font face="Courier New">^U</font></b>
+      (Control-U).<br>
+      <br>
+      <b><font face="Courier New">^G</font></b> (Control-G) will allow
+      you to access the help file for nano to learn more.<br>
+      <br>
+      Press <b><font face="Courier New">^X</font></b> (Control-X) to
+      exit nano making sure to save your file. </p>
+    <p> You should now be back at the $ prompt.<br>
+      The <b><font face="Courier New">ls</font></b> command allows you
+      to view the files within the current directory. </p>
+    <p><b><u> Learning UNIX Commands </u></b></p>
+    <p> The first UNIX command you will learn is the <b><font face="Courier New">man</font></b> command. This command will
+      allow you to look up the manual (also called man pages) for a
+      given command.<br>
+      <br>
+      Try out this command by typing <b><font face="Courier New">man
+          nano</font></b> and then pressing enter.<br>
+      What happens? _________________________________________<br>
+      The up and down arrows will let you scroll through the manual. You
+      can scroll more quickly by using the space bar (to scroll down a
+      page) and the character <b><font face="Courier New">b</font></b>
+      (to scroll up a page). You will need to type the character <b><font face="Courier New">q</font></b> to return to the command
+      prompt from the manual.<br>
+    </p>
+    <p>Now you can try out some more commands at the $ prompt.
+      Generally, to run a command, you will need to press enter after
+      typing the command. Most further references to pressing enter will
+      be omitted.</p>
+    <p>The <b><font face="Courier New">who</font></b> command displays
+      who is logged in. What is output when you run this
+      command?_______________________________</p>
+    <p>The <b><font face="Courier New">cat</font></b> command allows
+      you to concatenate and print (output) files. Explain what is
+      output when you run <b><font face="Courier New">cat practice.txt</font></b>.</p>
+    <p>The <b><font face="Courier New">man</font></b> command allows
+      you to learn the details (manual pages) of Unix commands. This
+      will be a very important tool since you will be learning about
+      many commands. Documentation on a command can be found by typing
+      the following:</p>
+    <p><b><font face="Courier New">man &lt;command&gt;</font></b></p>
+    <p>where <b><font face="Courier New">&lt;command&gt;</font></b> is
+      the name of the command.</p>
+    <p>To try out the <b><font face="Courier New">man</font></b>
+      command, issue the command:</p>
+    <p><b><font face="Courier New">man who</font></b></p>
+    <p>What happens?_______________________________________</p>
+    <p>To navigate the manual, use the space bar to page down and the
+      character <b><font face="Courier New">b</font></b> to page up.
+      Type the character <b><font face="Courier New">q</font></b> to
+      exit the manual. </p>
+    <p>Use <b><font face="Courier New">nano</font></b> to create three
+      new files named <b><font face="Courier New, Courier, monospace">filea</font></b>,
+      <b><font face="Courier New, Courier, monospace">fileb</font></b>,
+      and <b><font face="Courier New, Courier, monospace">filec</font></b>.
+      Type one sentence into each of these files. For example, you could
+      put the sentence <b><font face="Courier New, Courier, monospace">This
+          is filea.</font></b> in <b><font face="Courier New, Courier,
+          monospace">filea</font></b> and so on.</p>
+    <p>Test the <b><font face="Courier New, Courier, monospace">cat</font></b>
+      command on each of these files. Now issue the following commands:</p>
+    <p><b><font face="Courier New, Courier, monospace">cat filea; cat
+          fileb; cat filec<br>
+          <br>
+          cat filea fileb filec</font></b></p>
+    <p>Explain what the commands above accomplished.
+      ________________________________________________</p>
+    <p><b>Wildcard Characters</b></p>
+    <p>Wildcard characters allow you to abbreviate file names using the
+      <b><font face="Courier New, Courier, monospace">*</font></b> or <b><font face="Courier New, Courier, monospace">?</font></b>
+      characters. These symbols represent any combination of zero or
+      more characters and any one character respectively. Run the
+      commands below.</p>
+    <p><b><font face="Courier New, Courier, monospace"> cat file*<br>
+          cat file?<br>
+          cat fi*<br>
+          cat fi?<br>
+        </font></b></p>
+    <p>What is the difference between the results of the commands above?<br>
+      ________________________________________________________________<br>
+      ________________________________________________________________</p>
+    <p><b>Output Redirection</b></p>
+    <p>Output redirection allows you to send output provided by a
+      command to a file. The <b><font face="Courier New, Courier,
+          monospace">&gt;</font></b> character allows for output
+      redirection. Run the following command:</p>
+    <p><b><font face="Courier New">cat file? &gt; threefiles</font></b></p>
+    <p>Now run the following command:</p>
+    <p><b><font face="Courier New">cat threefiles</font></b></p>
+    <p>What happened?___________________________________________________</p>
+    <p><b>Directory Listings</b></p>
+    <p>The <b><font face="Courier New, Courier, monospace">ls</font></b>
+      command allows you to view the contents of the current directory.
+      Run the command:</p>
+    <p><b><font face="Courier New, Courier, monospace">ls</font></b></p>
+    <p>What was listed on the
+      screen?______________________________________</p>
+    <p>Options may be provided with the <b><font face="Courier New,
+          Courier, monospace">ls</font></b> command and with many other
+      commands. Two common options are <b><font face="Courier New,
+          Courier, monospace">-a</font></b> and <b><font face="Courier
+          New, Courier, monospace">-l</font></b>. You can combine these
+      options as <b><font face="Courier New, Courier, monospace">-al</font></b>.
+      Run the following commands:</p>
+    <p><b><font face="Courier New, Courier, monospace">ls -a</font></b></p>
+    <p><b><font face="Courier New, Courier, monospace">ls -l</font></b></p>
+    <p><b><font face="Courier New, Courier, monospace">ls -al</font></b></p>
+    <p>List at least two lines from the output of <b><font face="Courier New, Courier, monospace">ls -al</font></b>.</p>
+    <p>_____________________________________________________________________<br>
+_____________________________________________________________________</p>
+    <p>Notice that the <b>-l</b> option generates what is referred to
+      as a "long listing", and the <b>-a</b> option lists "invisible"
+      files. When combined, the two options list all files, including
+      invisible files, with a long listing.</p>
+    <p>Notice that each line of the directory listing looks similar to
+      the following line:</p>
+    <p><font face="Courier New, Courier, monospace"> drwxr-xr-x 12 root
+        knoppix 408 Aug 25 00:51 MPI_exercises<br>
+        -rw-r--r-- 1&nbsp; root&nbsp;knoppix&nbsp; 14 Aug 26 21:26 filea</font></p>
+    <p>The lines in the directory listing above contain detailed
+      information about each file. The columns have specific meanings.
+      The first refers to access permissions and file type. The second
+      is the number of links. The third is the owner's username. The
+      fourth is the group username. The fifth is the file size in bytes.
+      The sixth is the date and time of the last modification, and the
+      seventh is the file name.</p>
+    <p>Access permissions consist of a directory designator (first
+      character) and three groups of three permission categories. If the
+      directory designator is a "d", the file is a directory. A "-" for
+      the directory designator indicates a plain file.</p>
+    <p><font face="Courier New, Courier, monospace">drwxrwxrwx</font>
+      indicates a directory<br>
+      <font face="Courier New, Courier, monospace">-rwxrwxrwx</font>
+      indicates a file</p>
+    <p>Read, write, and execute permissions are indicated by the letters
+      <b>r</b>, <b>w</b>, and <b>x</b>, respectively. A "-" indicates
+      no access for that option in that category. Permission categories
+      are <b>user</b>, <b>group</b>, and <b>world</b>, from left to
+      write. So, the access permissions for the following file are read,
+      write, and execute for the user, read and execute for the group,
+      and read for the world (everyone).</p>
+    <p><font face="Courier New, Courier, monospace">-rwxr-xr--</font></p>
+    <p>How many invisible files are in the current directory? Files?
+      Directories?<br>
+_____________________________________________________________________</p>
+    <p><b> Copy command</b></p>
+    <p>The <b><font face="Courier New, Courier, monospace">cp</font></b>
+      command allows you to copy one file to another and to copy one or
+      more files to a directory. The source file is listed first, and
+      the destination file is listed second. Run the command:</p>
+    <p><b><font face="Courier New, Courier, monospace">cp practice.txt
+          practiceCopy.txt</font></b></p>
+    <p>Then run the commands: </p>
+    <p><b><font face="Courier New, Courier, monospace">cat practice.txt</font></b><br>
+      <b><font face="Courier New, Courier, monospace">cat
+          practiceCopy.txt</font></b><br>
+      <b><font face="Courier New, Courier, monospace">ls</font></b></p>
+    <p>What happened? ____________________________________________</p>
+    <p><b>Move command</b></p>
+    <p>The <b><font face="Courier New, Courier, monospace">mv</font></b>
+      command allows you to rename and move one or more files to another
+      directory location. The source file is listed first, and the
+      destination file is listed second. Run the command:</p>
+    <p><b><font face="Courier New, Courier, monospace">mv
+          practiceCopy.txt newPracticeCopy.txt</font></b></p>
+    <p>Then run the commands: </p>
+    <p><b><font face="Courier New, Courier, monospace">cat
+          practiceCopy.txt</font></b><br>
+      <b><font face="Courier New, Courier, monospace">cat
+          newPracticeCopy.txt</font></b><br>
+      <b><font face="Courier New, Courier, monospace">ls</font></b></p>
+    <p>What happened? ____________________________________________</p>
+    <p><b>Remove command</b></p>
+    <p>The <b><font face="Courier New, Courier, monospace">rm</font></b>
+      command allows you to remove a file, remove a list of named files,
+      or, by using wildcards, remove groups of files. Run the command:</p>
+    <p><b><font face="Courier New, Courier, monospace">rm
+          newPracticeCopy.txt</font></b></p>
+    <p>Then run the commands: </p>
+    <b><font face="Courier New, Courier, monospace">cat
+        newPracticeCopy.txt</font></b><br>
+    <b><font face="Courier New, Courier, monospace">ls</font></b>
+    <p>What happened? ____________________________________________</p>
+    <p><b>Working with Directories</b></p>
+    <p>It is assumed that you understand the concept of a directory and
+      a file. UNIX and Linux directories are stored as a tree with the
+      root of the tree specified as /. The root directory is specified
+      as / and each user has a directory under /home, called the home
+      directory. Typically, the user's home directory is specified as
+      the username. For example, a user with the username, "bob", would
+      typically have his home directory under /home/bob.</p>
+    <p>File and directory names follow some rules. UNIX file names only
+      contain the following characters:</p>
+    <p> Uppercase characters (A - Z)<br>
+      Lowercase characters (a - z)<br>
+      Numerals (0 - 9)<br>
+      Period (.), Underscore (_), and Comma (,) </p>
+    <p>Filenames should not contain any special characters!</p>
+    <p><b>Present Working Directory</b></p>
+    <p>The <b><font face="Courier New">pwd</font></b> command shows the
+      present working directory. This is the directory you are in. Run
+      the command:</p>
+    <p><b><font face="Courier New">pwd</font></b></p>
+    <p>What was output? ______________________________________________</p>
+    <p><b>Working with directories</b></p>
+    <p>The <b><font face="Courier New">mkdir</font></b> command allows
+      you to create a directory. Create a directory by running the
+      following command:</p>
+    <p><b><b><b><font face="Courier New">mkdir myNewDirectory</font></b></b></b></p>
+    <p>List the directory contents. What happened<b>?</b><b>
+        ____________________________</b></p>
+    <p>To change to a different directory, use the <b><font face="Courier New">cd</font></b> command. Change to your new
+      directory using the following command:</p>
+    <p><b><b><b><font face="Courier New">cd myNewDirectory</font></b></b></b></p>
+    <p>Run the command:</p>
+    <p><b><b><b><font face="Courier New">ls -al</font></b></b></b></p>
+    <p>What was output?
+      ______________________________________________________</p>
+    <p>Run the following commands:</p>
+    <p><b><b><b><font face="Courier New">pwd</font></b><br>
+          <b><font face="Courier New">cd ..</font></b><br>
+          <b><font face="Courier New">pwd</font></b><br>
+          <b><font face="Courier New">ls</font></b></b></b></p>
+    <p>What happened? What did <b><font face="Courier New">cd ..</font></b>
+      do?<br>
+______________________________________________________________________________<br>
+______________________________________________________________________________<br>
+    </p>
+    <p>Notice that <b><font face="Courier New">cd ..</font></b> changes
+      to the parent directory of the current directory. If you ever need
+      to get back to your home directory you can use the command <b><font face="Courier New">cd ~</font></b> to get back there. </p>
+    <p>Removing directories</p>
+    <p>Use <b><font face="Courier New">rm -R</font></b> to remove a
+      directory.</p>
+    <p><b><font face="Courier New">rm -R myNewDirectory</font></b></p>
+    <p>What happened?<br>
+__________________________________________________________________________<br>
+    </p>
+    <p><b>Writing a C Program</b><b><br>
+      </b></p>
+    <p>Now that you have learned some basic commands and how to use a
+      simple text editor, you should be able to write a simple C
+      program.<br>
+    </p>
+    <p>Return to your home directory by typing <b><font face="Courier
+          New">cd ~</font></b> at the <b><font face="Courier New">$</font></b>
+      prompt, and open a file called <b><font face="Courier New">HelloWorld.c</font></b>
+      by typing:<br>
+    </p>
+    <p><b><font face="Courier New">nano HelloWorld.c<br>
+        </font></b></p>
+    <p>Once the text editor is open, type in the following program.<br>
+    </p>
+    <p><font face="Courier New"><b>#include &lt;stdio.h&gt;</b><b><br>
+        </b></font></p>
+    <p><font face="Courier New"><b>int main(int argc, char ** argv)</b><b><br>
+        </b><b>{</b><b><br>
+        </b><b>&nbsp;&nbsp;&nbsp; printf("Hello, world!\n");</b><b><br>
+        </b><b>&nbsp;&nbsp;&nbsp; return 0;</b><b><br>
+        </b><b>}</b></font><br>
+    </p>
+    <p>After you have typed in the program, save and exit from <b><font face="Courier New">nano</font></b> using <b><font face="Courier New">Ctrl-X</font></b><br>
+    </p>
+    <p>At the <b><font face="Courier New">$</font></b> prompt, type the
+      following command:<br>
+    </p>
+    <p><font face="Courier New"><b>gcc HelloWorld.c -o HelloWorld.exe</b></font><br>
+    </p>
+    <p>The <font face="Courier New"><b>gcc</b></font> compiler is a
+      free, open source C compiler.&nbsp; In the command above, you
+      specified the file to be compiled, and the output, or executable,
+      file with the <b><font face="Courier New">-o</font></b> option.<br>
+    </p>
+    <p>Provided you typed in the file correctly, you should immediately
+      return to the <font face="Courier New"><b>$</b></font> prompt
+      with no output.&nbsp; The compiler should output errors if there
+      are errors in your program.<br>
+    </p>
+    <p>Type the <font face="Courier New"><b>ls</b></font> command.<br>
+    </p>
+    <p>Do you see your executable file? _______
+      Why?_________________________________<br>
+    </p>
+
+<p align="left" style="font-size: 10pt; color: black; background: white"><b>DISCLAIMER OF LIABILITY:</b>
+The individual to whom this page pertains is solely responsible for the information, 
+content or materials contained in it. Because Northwest Missouri State University 
+has no involvement in managing the content of this page, 
+Northwest will not be liable for any damages of any kind arising from the use of it, 
+including, but not limited to direct, indirect, incidental, punitive, and consequential damages.
+</p>
+
+
+</body></html>

@@ -1,0 +1,179 @@
+[bwa_index] Pack FASTA... 73.04 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=4081006404, availableWord=299154676
+[BWTIncConstructFromPacked] 10 iterations done. 99999988 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 199999988 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 299999988 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 399999988 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 499999988 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 599999988 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 699999988 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 799999988 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 899999988 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 999999988 characters processed.
+[BWTIncConstructFromPacked] 110 iterations done. 1099999988 characters processed.
+[BWTIncConstructFromPacked] 120 iterations done. 1199999988 characters processed.
+[BWTIncConstructFromPacked] 130 iterations done. 1299999988 characters processed.
+[BWTIncConstructFromPacked] 140 iterations done. 1399999988 characters processed.
+[BWTIncConstructFromPacked] 150 iterations done. 1499999988 characters processed.
+[BWTIncConstructFromPacked] 160 iterations done. 1599999988 characters processed.
+[BWTIncConstructFromPacked] 170 iterations done. 1699999988 characters processed.
+[BWTIncConstructFromPacked] 180 iterations done. 1799999988 characters processed.
+[BWTIncConstructFromPacked] 190 iterations done. 1899999988 characters processed.
+[BWTIncConstructFromPacked] 200 iterations done. 1999999988 characters processed.
+[BWTIncConstructFromPacked] 210 iterations done. 2099999988 characters processed.
+[BWTIncConstructFromPacked] 220 iterations done. 2199999988 characters processed.
+[BWTIncConstructFromPacked] 230 iterations done. 2299999988 characters processed.
+[BWTIncConstructFromPacked] 240 iterations done. 2399999988 characters processed.
+[BWTIncConstructFromPacked] 250 iterations done. 2499999988 characters processed.
+[BWTIncConstructFromPacked] 260 iterations done. 2599999988 characters processed.
+[BWTIncConstructFromPacked] 270 iterations done. 2699999988 characters processed.
+[BWTIncConstructFromPacked] 280 iterations done. 2799999988 characters processed.
+[BWTIncConstructFromPacked] 290 iterations done. 2899999988 characters processed.
+[BWTIncConstructFromPacked] 300 iterations done. 2999999988 characters processed.
+[BWTIncConstructFromPacked] 310 iterations done. 3099999988 characters processed.
+[BWTIncConstructFromPacked] 320 iterations done. 3199999988 characters processed.
+[BWTIncConstructFromPacked] 330 iterations done. 3299999988 characters processed.
+[BWTIncConstructFromPacked] 340 iterations done. 3399999988 characters processed.
+[BWTIncConstructFromPacked] 350 iterations done. 3494893796 characters processed.
+[BWTIncConstructFromPacked] 360 iterations done. 3579232436 characters processed.
+[BWTIncConstructFromPacked] 370 iterations done. 3654188836 characters processed.
+[BWTIncConstructFromPacked] 380 iterations done. 3720806276 characters processed.
+[BWTIncConstructFromPacked] 390 iterations done. 3780011988 characters processed.
+[BWTIncConstructFromPacked] 400 iterations done. 3832630180 characters processed.
+[BWTIncConstructFromPacked] 410 iterations done. 3879393332 characters processed.
+[BWTIncConstructFromPacked] 420 iterations done. 3920952532 characters processed.
+[BWTIncConstructFromPacked] 430 iterations done. 3957886420 characters processed.
+[BWTIncConstructFromPacked] 440 iterations done. 3990709316 characters processed.
+[BWTIncConstructFromPacked] 450 iterations done. 4019878356 characters processed.
+[BWTIncConstructFromPacked] 460 iterations done. 4045799876 characters processed.
+[BWTIncConstructFromPacked] 470 iterations done. 4068834948 characters processed.
+[bwt_gen] Finished constructing BWT in 476 iterations.
+[bwa_index] 3465.07 seconds elapse.
+[bwa_index] Update BWT... 13.42 sec
+[bwa_index] Pack forward-only FASTA... 65.97 sec
+[bwa_index] Construct SA from BWT and Occ... 1543.73 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: /opt/software/BWA/0.7.17-foss-2017b/bin/bwa index -a bwtsw NIST7035_TAAGGCGA_L001_R1_001.fastq.gz
+[main] Real time: 5242.032 sec; CPU: 5161.238 sec
+
+real	87m24.047s
+user	0m0.029s
+sys	0m0.018s
+[bwa_index] Pack FASTA... 73.20 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=4081006404, availableWord=299154676
+[BWTIncConstructFromPacked] 10 iterations done. 99999988 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 199999988 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 299999988 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 399999988 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 499999988 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 599999988 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 699999988 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 799999988 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 899999988 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 999999988 characters processed.
+[BWTIncConstructFromPacked] 110 iterations done. 1099999988 characters processed.
+[BWTIncConstructFromPacked] 120 iterations done. 1199999988 characters processed.
+[BWTIncConstructFromPacked] 130 iterations done. 1299999988 characters processed.
+[BWTIncConstructFromPacked] 140 iterations done. 1399999988 characters processed.
+[BWTIncConstructFromPacked] 150 iterations done. 1499999988 characters processed.
+[BWTIncConstructFromPacked] 160 iterations done. 1599999988 characters processed.
+[BWTIncConstructFromPacked] 170 iterations done. 1699999988 characters processed.
+[BWTIncConstructFromPacked] 180 iterations done. 1799999988 characters processed.
+[BWTIncConstructFromPacked] 190 iterations done. 1899999988 characters processed.
+[BWTIncConstructFromPacked] 200 iterations done. 1999999988 characters processed.
+[BWTIncConstructFromPacked] 210 iterations done. 2099999988 characters processed.
+[BWTIncConstructFromPacked] 220 iterations done. 2199999988 characters processed.
+[BWTIncConstructFromPacked] 230 iterations done. 2299999988 characters processed.
+[BWTIncConstructFromPacked] 240 iterations done. 2399999988 characters processed.
+[BWTIncConstructFromPacked] 250 iterations done. 2499999988 characters processed.
+[BWTIncConstructFromPacked] 260 iterations done. 2599999988 characters processed.
+[BWTIncConstructFromPacked] 270 iterations done. 2699999988 characters processed.
+[BWTIncConstructFromPacked] 280 iterations done. 2799999988 characters processed.
+[BWTIncConstructFromPacked] 290 iterations done. 2899999988 characters processed.
+[BWTIncConstructFromPacked] 300 iterations done. 2999999988 characters processed.
+[BWTIncConstructFromPacked] 310 iterations done. 3099999988 characters processed.
+[BWTIncConstructFromPacked] 320 iterations done. 3199999988 characters processed.
+[BWTIncConstructFromPacked] 330 iterations done. 3299999988 characters processed.
+[BWTIncConstructFromPacked] 340 iterations done. 3399999988 characters processed.
+[BWTIncConstructFromPacked] 350 iterations done. 3494893796 characters processed.
+[BWTIncConstructFromPacked] 360 iterations done. 3579232436 characters processed.
+[BWTIncConstructFromPacked] 370 iterations done. 3654188836 characters processed.
+[BWTIncConstructFromPacked] 380 iterations done. 3720806276 characters processed.
+[BWTIncConstructFromPacked] 390 iterations done. 3780011988 characters processed.
+[BWTIncConstructFromPacked] 400 iterations done. 3832630180 characters processed.
+[BWTIncConstructFromPacked] 410 iterations done. 3879393332 characters processed.
+[BWTIncConstructFromPacked] 420 iterations done. 3920952532 characters processed.
+[BWTIncConstructFromPacked] 430 iterations done. 3957886420 characters processed.
+[BWTIncConstructFromPacked] 440 iterations done. 3990709316 characters processed.
+[BWTIncConstructFromPacked] 450 iterations done. 4019878356 characters processed.
+[BWTIncConstructFromPacked] 460 iterations done. 4045799876 characters processed.
+[BWTIncConstructFromPacked] 470 iterations done. 4068834948 characters processed.
+[bwt_gen] Finished constructing BWT in 476 iterations.
+[bwa_index] 3459.69 seconds elapse.
+[bwa_index] Update BWT... 13.42 sec
+[bwa_index] Pack forward-only FASTA... 66.39 sec
+[bwa_index] Construct SA from BWT and Occ... 1545.19 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: /opt/software/BWA/0.7.17-foss-2017b/bin/bwa index -a bwtsw NIST7035_TAAGGCGA_L001_R2_001.fastq.gz
+[main] Real time: 5238.439 sec; CPU: 5157.902 sec
+
+real	87m21.132s
+user	0m0.029s
+sys	0m0.016s
+JobId=9027028 JobName=Index
+   UserId=stewa668(857038) GroupId=chemistry(2001) MCS_label=N/A
+   Priority=525721 Nice=0 Account=general QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=02:54:52 TimeLimit=1-00:00:00 TimeMin=N/A
+   SubmitTime=2019-02-06T16:58:11 EligibleTime=2019-02-06T16:58:11
+   AccrueTime=2019-02-06T16:58:11
+   StartTime=2019-02-06T16:58:11 EndTime=2019-02-07T16:58:11 Deadline=N/A
+   PreemptTime=None SuspendTime=None SecsPreSuspend=0
+   LastSchedEval=2019-02-06T16:58:11
+   Partition=general-long AllocNode:Sid=dev-intel18:25632
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=css-008
+   BatchHost=css-008
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=1,mem=40G,node=1,billing=6225
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=40G MinTmpDiskNode=0
+   Features=[intel11|intel14|intel16|intel18] DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/mnt/home/stewa668/cmse401-s19/HW3_Example/runBwaIndex_slurm_giab.sb
+   WorkDir=/mnt/home/stewa668/cmse401-s19/HW3_Example
+   Comment=stdout=/mnt/home/stewa668/cmse401-s19/HW3_Example/%x.out 
+   StdErr=/mnt/home/stewa668/cmse401-s19/HW3_Example/Index.out
+   StdIn=/dev/null
+   StdOut=/mnt/home/stewa668/cmse401-s19/HW3_Example/Index.out
+   Power=
+
+   CPUTime     MaxRSS 
+---------- ---------- 
+  00:00:15            
+  00:00:15          0 
+  00:00:17          0 
+  00:00:00         8K 
+  00:00:24            
+  00:00:24         8K 
+  00:00:24          0 
+  00:00:01         8K 
+  00:00:49            
+  00:00:52      4380K 
+  00:00:52        92K 
+  00:00:47    102552K 
+  00:01:30            
+  00:01:30      4376K 
+  00:01:33        92K 
+  00:01:24    102556K 
+  00:04:59            
+  00:05:01      4388K 
+  00:04:59        92K 
+  00:04:59   3680592K 
+  02:54:50            
+  02:54:50            
+  01:27:24   3680148K 
+  01:27:20   3683312K 

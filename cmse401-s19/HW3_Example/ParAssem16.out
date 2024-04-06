@@ -1,0 +1,133 @@
+
+Lmod is automatically replacing "GNU/6.4.0-2.28" with "GCC/6.4.0-2.28".
+
+
+Lmod is automatically replacing "GNU/6.4.0-2.28" with "GCC/6.4.0-2.28".
+
+
+Inactive Modules:
+  1) FFTW/3.3.7     2) Python/3.6.4     3) imkl/2018.1.163
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) ScaLAPACK/2.0.2-OpenBLAS-0.2.20
+
+The following have been reloaded with a version change:
+  1) OpenMPI/2.1.2 => OpenMPI/2.1.1
+
+
+Activating Modules:
+  1) FFTW/3.3.6
+
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 800000 sequences (160000000 bp)...
+[M::process] read 800000 sequences (160000000 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 365686, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (599, 599, 599)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (599, 599)
+[M::mem_pestat] mean and std.dev: (599.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (599, 599)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 800000 reads in 200.895 CPU sec, 18.169 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 372669, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (599, 599, 599)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (599, 599)
+[M::mem_pestat] mean and std.dev: (599.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (599, 599)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 800000 reads in 175.638 CPU sec, 12.467 real sec
+[M::process] read 800000 sequences (160000000 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 362888, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (599, 599, 599)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (599, 599)
+[M::mem_pestat] mean and std.dev: (599.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (599, 599)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 800000 reads in 184.717 CPU sec, 12.229 real sec
+[M::process] read 800000 sequences (160000000 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 356444, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (599, 599, 599)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (599, 599)
+[M::mem_pestat] mean and std.dev: (599.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (599, 599)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 800000 reads in 187.973 CPU sec, 12.810 real sec
+[M::process] read 142874 sequences (28574800 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (0, 63300, 0, 0)
+[M::mem_pestat] skip orientation FF as there are not enough pairs
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (599, 599, 599)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (599, 599)
+[M::mem_pestat] mean and std.dev: (599.00, 0.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (599, 599)
+[M::mem_pestat] skip orientation RF as there are not enough pairs
+[M::mem_pestat] skip orientation RR as there are not enough pairs
+[M::mem_process_seqs] Processed 142874 reads in 34.208 CPU sec, 2.334 real sec
+[main] Version: 0.7.17-r1188
+[main] CMD: /opt/software/BWA/0.7.17-foss-2017b/bin/bwa mem -t 16 ../Caenorhabditis_elegans.WBcel235.dna.toplevel.fa.gz ../DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1.fq.gz ../DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_2.fq.gz
+[main] Real time: 110.864 sec; CPU: 796.047 sec
+
+real	1m57.850s
+user	0m6.687s
+sys	0m12.981s
+JobId=9123286 JobName=ParAssem16
+   UserId=stewa668(857038) GroupId=chemistry(2001) MCS_label=N/A
+   Priority=524137 Nice=0 Account=general QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:02:09 TimeLimit=00:20:00 TimeMin=N/A
+   SubmitTime=2019-02-08T00:28:32 EligibleTime=2019-02-08T00:28:32
+   AccrueTime=2019-02-08T00:28:32
+   StartTime=2019-02-08T00:28:32 EndTime=2019-02-08T00:48:32 Deadline=N/A
+   PreemptTime=None SuspendTime=None SecsPreSuspend=0
+   LastSchedEval=2019-02-08T00:28:32
+   Partition=general-long AllocNode:Sid=dev-intel18:25038
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=lac-038
+   BatchHost=lac-038
+   NumNodes=1 NumCPUs=16 NumTasks=1 CPUs/Task=16 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=16,mem=8G,node=1,billing=1245
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=16 MinMemoryNode=8G MinTmpDiskNode=0
+   Features=[intel14|intel16|intel18] DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/mnt/home/stewa668/cmse401-s19/HW3_Example/runBwaAln_slurm_giab_noRg.sb
+   WorkDir=/mnt/home/stewa668/cmse401-s19/HW3_Example
+   Comment=stdout=/mnt/home/stewa668/cmse401-s19/HW3_Example/%x.out 
+   StdErr=/mnt/home/stewa668/cmse401-s19/HW3_Example/ParAssem16.out
+   StdIn=/dev/null
+   StdOut=/mnt/home/stewa668/cmse401-s19/HW3_Example/ParAssem16.out
+   Power=
+
+   CPUTime     MaxRSS              Submit               Start                 End 
+---------- ---------- ------------------- ------------------- ------------------- 
+  00:08:44            2019-02-08T00:26:18 2019-02-08T00:26:19             Unknown 
+  00:08:44            2019-02-08T00:26:19 2019-02-08T00:26:19             Unknown 
+  00:08:30            2019-02-08T00:26:26 2019-02-08T00:26:26             Unknown 
+  00:15:48            2019-02-08T00:26:44 2019-02-08T00:26:44             Unknown 
+  00:15:48            2019-02-08T00:26:44 2019-02-08T00:26:44             Unknown 
+  00:15:12            2019-02-08T00:26:53 2019-02-08T00:26:53             Unknown 
+  00:22:00            2019-02-08T00:27:14 2019-02-08T00:27:14 2019-02-08T00:29:59 
+  00:22:00      4508K 2019-02-08T00:27:14 2019-02-08T00:27:14 2019-02-08T00:29:59 
+  00:22:16          0 2019-02-08T00:27:14 2019-02-08T00:27:14 2019-02-08T00:30:01 
+  00:20:32   1108416K 2019-02-08T00:27:22 2019-02-08T00:27:22 2019-02-08T00:29:56 
+  00:17:48            2019-02-08T00:27:43 2019-02-08T00:27:43             Unknown 
+  00:17:48            2019-02-08T00:27:43 2019-02-08T00:27:43             Unknown 
+  00:16:48            2019-02-08T00:27:53 2019-02-08T00:27:53             Unknown 
+  00:31:24            2019-02-08T00:28:04 2019-02-08T00:28:04             Unknown 
+  00:31:24            2019-02-08T00:28:04 2019-02-08T00:28:04             Unknown 
+  00:29:24            2019-02-08T00:28:14 2019-02-08T00:28:14             Unknown 
+  00:34:24            2019-02-08T00:28:32 2019-02-08T00:28:32             Unknown 
+  00:34:24            2019-02-08T00:28:32 2019-02-08T00:28:32             Unknown 
+  00:31:12            2019-02-08T00:28:44 2019-02-08T00:28:44             Unknown 

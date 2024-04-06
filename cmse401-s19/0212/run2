@@ -1,0 +1,5 @@
+echo "" > out.txt
+bash ./run &>> out.txt
+sed -i '1d' out.txt
+sed -n 'p;n' out.txt | cut -d " " -f 2 > data2.txt
+sed -n 'n;p' out.txt > data3.txt

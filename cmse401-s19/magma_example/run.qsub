@@ -1,0 +1,23 @@
+#!/bin/bash -login
+
+#PBS -N run_example
+#PBS -l nodes=1:ppn=1:gpus=1,mem=20MB,walltime=10:00
+#PBS -l feature=gpgpu
+
+module purge
+module load GCC/6.4.0-2.28  OpenMPI/2.1.2 
+module load magma/2.3.0-CUDA-9.1.85 imkl/2018.1.163
+cd ${PBS_O_WORKDIR}
+
+# build the executable if not yet exist
+if [ ! -f "dgesv_gpu.exe" ]
+then
+    make clean
+    make
+fi
+
+# run the program
+./dgesv_gpu.exe
+
+# print job information
+qstat -f ${PBS_JOBID}

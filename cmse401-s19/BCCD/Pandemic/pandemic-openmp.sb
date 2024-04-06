@@ -1,0 +1,28 @@
+#!/bin/bash -login
+#SBATCH --time=00:10:00
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=10G
+#SBATCH --job-name Galaxsee 
+
+cd ${SLURM_SUBMIT_DIR}
+
+echo Running
+export OMP_NUM_THREADS=1
+time ./Pandemic.c-openmp -w 1000 -h 1000 -n 100000
+export OMP_NUM_THREADS=2
+time ./Pandemic.c-openmp -w 1000 -h 1000 -n 100000
+export OMP_NUM_THREADS=4
+time ./Pandemic.c-openmp -w 1000 -h 1000 -n 100000
+export OMP_NUM_THREADS=8
+time ./Pandemic.c-openmp -w 1000 -h 1000 -n 100000
+export OMP_NUM_THREADS=16
+time ./Pandemic.c-openmp -w 1000 -h 1000 -n 100000
+echo done
+ 
+##### Stop the Xvfb server and remove the files it created.
+ 
+scontrol show job $SLURM_JOB_ID
+
+
+

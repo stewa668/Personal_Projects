@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#BSUB -N
+#BSUB -J $program-$index
+#BSUB -n $threads
+#BSUB -B
+#BSUB -R span[ptile=$procpernode]
+#BSUB -W $max_time
+#BSUB -u $email_address
+#BSUB -a openmpi
+#BSUB -e $working_dir/$index-\%J.err.txt
+#BSUB -o $working_dir/$index-\%J.out.txt
+#BSUB -q $queue
+export MPI_VENDOR=openmpi
+export LD_LIBRARY_PATH=/usr/mpi/intel/openmpi-1.2.8-qlc/lib64:\$LD_LIBRARY_PATH
+
+$prep
+$special
+$main
+$finalize

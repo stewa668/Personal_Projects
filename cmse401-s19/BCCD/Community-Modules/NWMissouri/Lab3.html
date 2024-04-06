@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <title>Lab 3</title>
+  </head>
+  <body>
+    <p align="center"><b>Lab 3 (5 points)<br>
+        CS550, Operating Systems<br>
+        Introduction to C-Style Pointers, C-Style Strings, POSIX
+        Threads, and Processes </b></p>
+    <p align="right"> Name:
+      _____________________________________________ </p>
+    <p> This assignment is based upon the UNIX labs from the CS2351
+      course at Oklahoma State University, available at
+      cs.okstate.edu/newuser/index.html. To submit this assignment, you
+      may copy and paste the assignment into a text editor such as nano,
+      vi, notepad, MS Word, OpenOffice Writer, etc.&nbsp; Enter your
+      answers into the document and submit it to the dropbox for lab
+      3.&nbsp; The purpose of this lesson is to learn to about command
+      line debugging, pointers, threads, and processes in the C
+      programming language.</p>
+      <p>This assignment references code from Steve Oualline's book, Practical C
+      Programming.</p>
+    <p>1. Enter, compile, and run the following application:</p>
+    <p style="font-family: Courier New,Courier,monospace;">#include
+      &lt;stdio.h&gt;<br>
+      <br>
+      int main(int argc, char ** argv)<br>
+      {<br>
+      &nbsp; int arr[3] = {1,2,3};<br>
+      &nbsp; int x = 7;<br>
+      &nbsp; int * intPointer = &amp;x;&nbsp; //This is an integer
+      pointer and contains the<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+      //address of x.<br>
+      <br>
+      &nbsp; printf("Welcome to C!\n");<br>
+      &nbsp; printf("arr contains %d, %d, and %d\n", arr[0], arr[1],
+      arr[2]);<br>
+      <br>
+      &nbsp; printf("x is %d, the address of x is %u, the address of arr
+      is %u\n", x, intPointer, arr);<br>
+      <br>
+      &nbsp; //Notice that an integer pointer can also hold the address
+      of an integer array.<br>
+      &nbsp; intPointer = arr;<br>
+      &nbsp; printf("The address of arr is %u\n", intPointer);<br>
+      <br>
+      &nbsp; //The * operator, when applied to a pointer, dereferences a
+      pointer or an address<br>
+      &nbsp; intPointer = &amp;x;<br>
+      <br>
+      &nbsp; printf("Dereferencing the address of x gives its value,
+      which is %d\n", *intPointer);<br>
+      <br>
+      &nbsp; printf("Dereferencing arr provides arr[0] which is %d\n",
+      *arr);<br>
+      &nbsp; printf("Dereferencing arr+1 provides arr[1] which is %d\n",
+      *(arr+1));<br>
+      &nbsp; printf("Dereferencing arr+2 provides arr[2] which is %d\n",
+      *(arr+2));<br>
+    </p>
+    <p style="font-family: Courier New,Courier,monospace;">&nbsp; return
+      0;<br>
+      }</p>
+    <p>You may type this file into the nano text editor, or copy and
+      paste it.</p>
+    <p>PuTTY users will open PuTTY and connect to the LittleFe server as
+      shown in class.&nbsp; Log on to LittleFe and create a new file
+      called <span style="font-family: Courier New,Courier,monospace;">Welcome.c</span>
+      with the nano editor.&nbsp; Users wishing to copy and paste the
+      text into nano should return to this webpage, highlight the text
+      of the source code, right click, and click copy.&nbsp; Return to
+      the nano editor, and right click inside the editor.&nbsp; The text
+      of the source code should now be inside the editor.&nbsp; Press
+      Ctrl-X to save and exit from nano.<br>
+    </p>
+    <p>Non-PuTTY users will log on to LittleFe as usual and create a new
+      file called <span style="font-family: Courier
+        New,Courier,monospace;">Welcome.c</span> with the nano
+      editor.&nbsp; Users may copy the code from this website.&nbsp;
+      When inside the nano editor, right click and choose paste. The
+      text of the source code should now be inside the editor.&nbsp;
+      Press Ctrl-X to save and exit from nano.</p>
+    <p>Introduce the following errors, one at a time to the program <span
+        style="font-family: Courier New,Courier,monospace;">Welcome.c</span>.&nbsp;
+
+
+      Compile the program and write down any error messages that the
+      compiler produces.&nbsp; Fix the previous error message before you
+      introduce a new error.&nbsp; If no errors were produced, explain
+      why.</p>
+    <p>a. Change <span style="font-family: Courier
+        New,Courier,monospace;">argc</span> to <span
+        style="font-family: Courier New,Courier,monospace;">argx.</span></p>
+    <p>b. Change <span style="font-family: Courier
+        New,Courier,monospace;">Welcome</span> to <span
+        style="font-family: Courier New,Courier,monospace;">welcome.</span></p>
+    <p>c. Remove the first quote in the <span style="font-family:
+        Courier New,Courier,monospace;">printf</span> statement.</p>
+    <p>d. Remove the last quote in the <span style="font-family:
+        Courier New,Courier,monospace;">printf</span> statement.</p>
+    <p>e. Change <span style="font-family: Courier
+        New,Courier,monospace;">main</span> to <span
+        style="font-family: Courier New,Courier,monospace;">mai.</span></p>
+    <p>f. Change <span style="font-family: Courier
+        New,Courier,monospace;">printf</span> to <span
+        style="font-family: Courier New,Courier,monospace;">println.</span></p>
+    <p>g. Remove the semicolon at the end of the <span
+        style="font-family: Courier New,Courier,monospace;">printf</span>
+      statement.</p>
+    <p>h. Remove the last curly bracket in the program.</p>
+    <p>i. Remove arr[0], arr[1], and arr[2] from the second printf
+      statement.<br>
+    </p>
+    <p>j. Change arr[0] to arr[3].<br>
+    </p>
+    <p>k. Change arr[0] to arr[10000] (this should cause a segmentation
+      fault).<br>
+    </p>
+    <p><br>
+    </p>
+    <p>2. Complete, compile, and run the following application.&nbsp;
+      Name it <span style="font-family: Courier New,Courier,monospace;">Lab3.c</span></p>
+    <p>You may copy and paste the following code into nano while using
+      PuTTY or another ssh client.</p>
+    <p style="font-family: Courier New,Courier,monospace;">//
+      &lt;Name&gt;<br>
+      // cs550<br>
+      // Lab3<br>
+      <br>
+      #include &lt;stdio.h&gt;<br>
+      <br>
+      int main(int argc, char ** argv)<br>
+      {<br>
+      &nbsp; char str[200];<br>
+      &nbsp; int iX;<br>
+      &nbsp; double dX;<br>
+      <br>
+      &nbsp; //Prompt the user to enter a line of text.<br>
+      &nbsp; printf("Please enter a line of text (less than 200
+      characters): ");<br>
+      <br>
+      &nbsp; //Use fgets to store a line of text from stdin in str.<br>
+      <br>
+      &nbsp; //Prompt the user to enter an integer.<br>
+      &nbsp; printf("Enter an integer: ");<br>
+      <br>
+      &nbsp; //Use scanf to store the integer in iX.<br>
+      <br>
+      &nbsp; //Prompt the user to enter a double.<br>
+      &nbsp; printf("Please enter a real number: ");<br>
+      <br>
+      &nbsp; //Use fgets and sscanf to store the double value in dX.<br>
+      <br>
+      &nbsp; //Print the results.<br>
+      &nbsp; printf("%s %d %lf\n", str, iX, dX);<br>
+      &nbsp; return 0;<br>
+      }<br>
+    </p>
+    Complete the code above, providing the necessary statements to store
+    a C string, an integer, and a double provided by the user.&nbsp;
+    Save the values and turn in a printout (i.e. a copy) of your code
+    and output.
+    <p>To create an output file, use the UNIX command <span
+        style="font-family: Courier New,Courier,monospace;">script</span>:</p>
+    <p style="font-family: Courier New,Courier,monospace;">$script
+      Lab3.out<br>
+      Script started, file is Lab3.out<br>
+      $cat Lab3.c<br>
+      <br>
+      &lt;code is automatically printed here via the cat command&gt;<br>
+      <br>
+      $gcc Lab3.c -o Lab3.exe<br>
+      $./Lab3.exe<br>
+      <br>
+      &lt;run the program to completion&gt;<br>
+      <br>
+      $exit<br>
+      Script done, file is Lab3.out</p>
+    <p>Copy your file from the LittleFe system to your own system using
+      SFTP (the Secure File Transfer Protocol).&nbsp; Instructions for
+      an sftp client are provided at the following site:
+      http://catpages.nwmissouri.edu/m/monismi/cs550/examples/sftp.html<br>
+    </p>
+    <p><br>
+    </p>
+    <p>3. The following program prints hello from eight POSIX (Portable
+      Operating System Interface) threads.&nbsp; Read through the
+      following program and run it.&nbsp; Provide a copy of your output
+      when you submit the assignment.<br>
+    </p>
+    <p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+        #include &lt;stdlib.h&gt;<br>
+        #include &lt;pthread.h&gt;<br>
+        <br>
+        #define NUM_THREADS 8<br>
+        //Add your static array here<br>
+        <br>
+        //Define our thread function<br>
+        void * HelloThread(void * threadId)<br>
+        {<br>
+        &nbsp; long tid;&nbsp; // This thread's identifier<br>
+        &nbsp; tid = (long) threadId;<br>
+        &nbsp; //Modify the static array here<br>
+        <br>
+        &nbsp; printf("Hello from thread %ld\n", tid);<br>
+        <br>
+        &nbsp; pthread_exit(NULL); //Cause the thread to die.<br>
+        }<br>
+        <br>
+        int main(int argc, char ** argv)<br>
+        {<br>
+        &nbsp; pthread_t threadList[NUM_THREADS];&nbsp; //Declare and
+        allocate memory for t$<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+        //list of threads<br>
+        <br>
+        &nbsp; int returnCode;<br>
+        &nbsp; long i;&nbsp; //Counter to keep track of the current
+        thread<br>
+        <br>
+        &nbsp; for(i = 0; i &lt; NUM_THREADS; i++)<br>
+        &nbsp;{<br>
+        &nbsp;&nbsp;&nbsp; printf("From main, creating thread %ld\n",
+        i);<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; //Create the threads storing the thread
+        identifier in the thread<br>
+        &nbsp;&nbsp;&nbsp; //list.&nbsp; Note that we pass in the name
+        of the function that will<br>
+        &nbsp;&nbsp;&nbsp; //act as the thread as the third parameter,
+        and the following<br>
+        &nbsp;&nbsp;&nbsp; //parameters are the parameters passed into
+        the thread.<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; returnCode =
+        pthread_create(&amp;threadList[i], NULL, HelloThread, <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (void *) i);<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; if(returnCode != 0)<br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("The return code from
+        thread %ld is %d\n", i, returnCode);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit(-1);<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+        &nbsp; }<br>
+        <br>
+        &nbsp; //Print the static array here<br>
+        <br>
+        &nbsp; //Kill the main thread<br>
+        &nbsp; pthread_exit(NULL);<br>
+        }</font><br>
+    </p>
+    <p>To compile the program above assuming it is named <b>lab3Threads.c</b>,
+      use the following command on any Linux system:<br>
+    </p>
+    <p><font face="Courier New">gcc lab3Threads.c -pthread -o
+        lab3Threads.exe</font><br>
+    </p>
+    <p>4. The following program creates eight processes and prints hello
+      from each of them.&nbsp; Read through the program and run
+      it.&nbsp; Include your output with your submission.<br>
+    </p>
+    <p><font face="Courier New">#include &lt;sys/types.h&gt;<br>
+        #include &lt;stdio.h&gt;<br>
+        #include &lt;unistd.h&gt;<br>
+        #include &lt;stdlib.h&gt;<br>
+        <br>
+        #define NUM_PROCESSES 8<br>
+        //Declare your static array here<br>
+        <br>
+        int main(int argc, char ** argv)<br>
+        {<br>
+        &nbsp; pid_t pid;<br>
+        &nbsp; int i;<br>
+        <br>
+        &nbsp; //Fork a child process<br>
+        &nbsp; for(i = 0; i &lt; NUM_PROCESSES; i++)<br>
+        &nbsp; {<br>
+        &nbsp;&nbsp;&nbsp; pid = fork();<br>
+        <br>
+        &nbsp;&nbsp;&nbsp; if(pid &lt; 0)<br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(stderr, "Fork failed\n");<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 1;<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+        &nbsp;&nbsp;&nbsp; else if(pid == 0)<br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Each child process starts here<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Modify the static array here<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("Child %d complete!\n",
+        i);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exit(0);<br>
+        &nbsp;&nbsp;&nbsp; } <br>
+        &nbsp;&nbsp;&nbsp; else<br>
+        &nbsp;&nbsp;&nbsp; {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //parent process<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("Parent started process
+        %d\n", i);<br>
+        &nbsp;&nbsp;&nbsp; }<br>
+        &nbsp; }<br>
+        &nbsp; wait(NULL);<br>
+        &nbsp; printf("Finished parent process\n");<br>
+        &nbsp; return 0;<br>
+        }</font><br>
+    </p>
+    <p>To compile the program above, assuming it is called <b>lab3Processes.c</b>,
+      use the following command:<br>
+    </p>
+    <p><font face="Courier New">gcc lab3Processes.c -o lab3Processes.exe</font><br>
+    </p>
+    <p>5. Add a static integer array of size <b>NUM_THREADS</b>
+      immediately after the line containing the <b>#define</b> in the
+      thread program from problem 3.&nbsp; The code for this array
+      follows below.<br>
+    </p>
+    <p><font face="Courier New">static int arr[NUM_THREADS];</font><br>
+    </p>
+    <p>Set arr[(int) tid)] to a value of your choice within each
+      thread.&nbsp; Note that this value must be different for every
+      thread.&nbsp; It could be the same as the thread identifier, if
+      you wish.<br>
+    </p>
+    <p>Print the contents of this array immediately before you kill the
+      main thread.<br>
+    </p>
+    <p>Include a copy of your source code and the output in your
+      submission.<br>
+    </p>
+    <p>6. Repeat problem 5 using processes instead of threads for the
+      program in problem 4.&nbsp; Why is the output different?&nbsp;
+      Hint: think about process memory space.<br>
+    </p>
+    <p>7. Compile and run the following program on Stampede (Host Name:
+      stampede.tacc.utexas.edu ).&nbsp; You should be able to login to
+      Stampede using PuTTY and your Stampede username.&nbsp; Note that
+      you are <b>not</b> allowed to run your program (also called a
+      job) on the login node.&nbsp; Instructions to submit, run, check,
+      and, if necessary, to kill a job follow after the program.&nbsp;
+      Note that Stampede runs a variation of Linux called CentOS.&nbsp;
+      Most of the commands you used on Littlefe such as ps, ls, cat,
+      nano, etc., work on Stampede.&nbsp; <br>
+    </p>
+    <p><font face="Courier New">#include &lt;stdio.h&gt;<br>
+        #include &lt;stdlib.h&gt;<br>
+        #include "mpi.h"<br>
+        <br>
+        int main (int argc, char** argv)<br>
+        {<br>
+        &nbsp; int number_of_processes;<br>
+        &nbsp; int my_rank;<br>
+        &nbsp; int mpi_error_code;<br>
+        <br>
+        &nbsp; mpi_error_code = MPI_Init(&amp;argc, &amp;argv);<br>
+        <br>
+        &nbsp; mpi_error_code = MPI_Comm_rank(MPI_COMM_WORLD,
+        &amp;my_rank);<br>
+        <br>
+        &nbsp; mpi_error_code = MPI_Comm_size(MPI_COMM_WORLD,
+        &amp;number_of_processes);<br>
+        <br>
+        &nbsp; printf("%d o%d: Hello, world!\n", my_rank,
+        number_of_processes);<br>
+        <br>
+        &nbsp; mpi_error_code = MPI_Finalize();<br>
+        }</font><br>
+    </p>
+    <p>Save this program in a file named <b>hello_world.c</b> on
+      Stampede.&nbsp; <br>
+    </p>
+    <p>On Stampede, you must submit batch scripts to run your
+      programs.&nbsp; This means your job waits in a virtual line before
+      it may run.&nbsp; The batch queue scheduler on Stampede is called
+      SLURM (like the drink on Futurama).&nbsp; Write a SLURM batch
+      script for your program as follows:<br>
+    </p>
+    <p><font face="Courier New">#!/bin/bash<br>
+        #SBATCH -A TG-SEE120004&nbsp; #Account number<br>
+        #SBATCH -n
+        16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        #Number of tasks (cores)<br>
+        #SBATCH -J helloWorld&nbsp;&nbsp;&nbsp; #Job name<br>
+        #SBATCH -o hw.o%j&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #Output file
+        name<br>
+        #SBATCH -p normal&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        #Queue to use<br>
+        #SBATCH -t 00:15:00&nbsp;&nbsp;&nbsp; &nbsp;#Run (wall) time
+        15min<br>
+        ibrun hello_world.exe</font><br>
+    </p>
+    <p>Save this batch script in a file called <b>hello.sbatch</b> on
+      Stampede.<br>
+    </p>
+    <p>Compile your program on the head node using the following
+      command.&nbsp; Note that this is ok because the compilation uses
+      very few resources.<br>
+    </p>
+    <p><font face="Courier New">mpicc hello_world.c -O3 -o
+        hello_world.exe</font><br>
+    </p>
+    <p>Note that the executable file name matches exactly with what will
+      run in the batch script using <b>ibrun</b>.<br>
+    </p>
+    <p>Fix any errors in your program, and submit your program to the
+      batch queue using the following command:<br>
+    </p>
+    <p><font face="Courier New">sbatch hello.sbatch</font><br>
+    </p>
+    <p>Once your program finishes, the output will show up in a file
+      called <b>hw.oJobNumber</b>, where <b>JobNumber</b> is the job
+      number assigned to your job by Stampede.&nbsp; You can find this
+      file by using the <b>ls</b> command.&nbsp; <b><i>Turn in the
+          contents of this file.</i></b><br>
+    </p>
+    <p>While your program is in the batch, run the following commands on
+      Stampede.&nbsp; If necessary, submit your program to the batch
+      queue again and quickly run the commands below.&nbsp; Note that
+      the up and down arrow keys can be used to scroll through
+      previously issued commands.<br>
+    </p>
+    <p><font face="Courier New">showq</font><br>
+    </p>
+    <p>What happened after running <b>showq</b>?<br>
+    </p>
+    <p><font face="Courier New">squeue -u Username</font><br>
+    </p>
+    <p>Where Username is your Stampede username.&nbsp; What happened
+      after running the command above?<br>
+    </p>
+    <p>Note that you may have a program that runs in an infinite loop or
+      enters a condition called deadlock or livelock.&nbsp; To end such
+      a program that is running on Stampede, you may first determine the
+      job number using squeue as shown above and killing the program
+      with the following command:<br>
+    </p>
+    <p><font face="Courier New">scancel JobNumber</font><br>
+    </p>
+  </body>
+</html>
+
+<p align=left style="font-size: 10pt; color: black; background: white"><b>DISCLAIMER OF LIABILITY:</b>
+The individual to whom this page pertains is solely responsible for the information, 
+content or materials contained in it. Because Northwest Missouri State University 
+has no involvement in managing the content of this page, 
+Northwest will not be liable for any damages of any kind arising from the use of it, 
+including, but not limited to direct, indirect, incidental, punitive, and consequential damages.
+</p>
+
+

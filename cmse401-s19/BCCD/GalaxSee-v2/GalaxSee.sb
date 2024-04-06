@@ -1,0 +1,20 @@
+#!/bin/bash -login
+#SBATCH --time=00:10:00
+#SBATCH --ntasks=40
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=10G
+#SBATCH --job-name Galaxsee 
+cd ${SLURM_SUBMIT_DIR}
+
+module load OpenMPI
+
+time mpirun GalaxSee-v2.c-mpi simple.gal 100000 
+time mpirun -n 20 GalaxSee-v2.c-mpi simple.gal 100000 
+time mpirun -n 10 GalaxSee-v2.c-mpi simple.gal 100000 
+time mpirun -n 5 GalaxSee-v2.c-mpi simple.gal 100000 
+time mpirun -n 1 GalaxSee-v2.c-mpi simple.gal  100000 
+
+scontrol show job $SLURM_JOB_ID
+
+
+

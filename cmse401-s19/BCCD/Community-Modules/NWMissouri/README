@@ -1,0 +1,68 @@
+This module links to a course developed by David Monismith at Northwest Missouri State University.
+
+_Homework Pages_
+https://catpages.nwmissouri.edu/m/monismi/cs550/hw.html
+
+_Example Problems_
+https://catpages.nwmissouri.edu/m/monismi/cs550/examples.html
+
+_Notes_
+https://catpages.nwmissouri.edu/m/monismi/cs550/notes.html
+
+_References_
+
+[1] Message Passing Interface Forum, MPI: A Message-Passing Interface Standard,
+Version 3.0, Stuttgart, Germany: High Performance Computing Center, 2012.
+[2] Pfaff, B., Romano, A., Back, G., "The Pintos instructional operating system,"
+Proceedings of the 40th ACM technical symposium on Computer science education, March
+2009.
+[3] Christopher, W., Procter, S., Anderson, T., "The Nachos instructional operating
+system," Proc. USENIX Winter 1993 Conf., 4, Berkeley, CA: USENIX Association, 1993.
+[4] Scherger, M., "A Course in Advanced Operating Systems Using MPI for Projects,"
+Journal of Computing Sciences in Colleges, 26, (4), 57-63, 2011.
+[5] Andrus, J., Nieh, J., "Teaching Operating Systems Using Android," Proceedings of
+SIGCSE 2012, Raleigh, NC, ACM, 613 - 618, Feb 29 - Mar 3, 2012.
+[6] Hess, R. and Paulson, P., "Linux Kernel Projects for an Undergraduate Operating
+Systems Course," Proc. of SIGCSE 2010, Milwaukee, WI, ACM, 485 - 489, Mar 10 - 13,
+2010.
+[7] MIT Open Courseware, Operating System Engineering, 2006, MIT, Cambridge, MA,
+http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-828-operating-system-engineering-fall-2006/
+, retrieved Nov. 27, 2012.
+[8] Nieh, J., Operating Systems I, Columbia University, New York City, NY 2012,
+http://www.cs.columbia.edu/~nieh/teaching/w4118/ , retrieved Nov. 27, 2012
+[9] Siever, W., Operating Systems Course Notes (CS550), Northwest Missouri State
+University, Maryville, MO, 2011.
+[10] Stoica, I., Operating Systems and Systems Programming, Univ. of California at
+Berkeley, CA, 2012, http://inst.eecs.berkeley.edu/~cs162/fa12/, retrieved Nov. 27,
+2012.
+[11] Knopper, K., Knoppix - Live Linux File System On CD, Schmalenberg, Germany,
+1998, http://www.knopper.net/knoppix/index-en.html, retrieved Aug. 25, 2012.
+[12] The OpenMPI Project, Open MPI: Open Source High Performance Computing, Indiana
+University, Bloomington, IN, 2012, www.openmpi.org, retrieved Aug. 25, 2012.
+[13] Garrido, J., Schlesinger, R., Principles of Modern Operating Systems, Sudbury,
+MA: Jones and Bartlett Publishers Inc., 2008.
+[14] M. Sahami et al, Computer Science Curricula 2013, Ironman Draft, v. 1.0, Joint
+Task Force on Computing Curricula, ACM, IEEE, Feb. 2013,
+http://ai.stanford.edu/users/sahami/CS2013/, accessed accessed Jul. 18, 2013.
+[15] Benard, M., Operating Systems Course Notes (CPSC 355/655), Tulane University,
+New Orleans, LA, 2001.
+[16] Oualline, S., Practical C Programming, 3rd Ed., Sebastopol, CA: O'Reilly Media,
+1997.
+[17] UNIX Information for New Students and Faculty, Oklahoma State University, OK,
+2002, http://www.cs.okstate.edu/newuser/, retrieved Aug. 25, 2012.
+[18] Extreme Science and Engineering Discovery Environment (XSEDE),
+https://www.xsede.org, retrieved Aug. 25, 2012.
+[19] Grama, A., Gupta, A., Karypis, G., Kumar, V., Introduction to Parallel
+Computing, 2nd Ed., Harlow, Essex, England: Pearson Education Ltd., 2003.
+[20] Snir, M., Otto, S., Huss-Lederman, S., Walker, D., Dongarra, J., MPI: The
+Complete Reference, Cambridge, MA: The MIT Press, 1996.
+[21] Gropp, W., Lusk, E., Ross, R., Thakur, R., Advanced MPI, Proceedings of the
+International Conference on High Performance Computing, Salt Lake City, UT: IEEE
+Computer Society/ACM, Nov. 10 - 16, 2012.
+[22] Lustre 2.0 Operations Manual, Oracle Corp., 2011.
+http://wiki.lustre.org/manual/LustreManual20_HTML/index.html, retrieved Nov. 16,
+2012.
+[23] H. Neeman, Supercomputing In Plain English, University of Oklahoma, Norman, OK,
+2011, retrieved Aug. 25, 2012.
+[24] Walker, R., COMP2030: Lab 2, August, 1996,
+http://cs.anu.edu.au/student/comp2030/Lab2.html, retrieved Oct. 22, 2012.

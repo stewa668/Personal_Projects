@@ -1,0 +1,97 @@
+[bwa_index] Pack FASTA... 8.50 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=668574800, availableWord=59042972
+[BWTIncConstructFromPacked] 10 iterations done. 93516384 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 176486560 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 250226672 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 315763056 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 374007936 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 425772128 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 471776240 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 512660800 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 548995072 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 581285040 characters processed.
+[BWTIncConstructFromPacked] 110 iterations done. 609980416 characters processed.
+[BWTIncConstructFromPacked] 120 iterations done. 635480896 characters processed.
+[BWTIncConstructFromPacked] 130 iterations done. 658141760 characters processed.
+[bwt_gen] Finished constructing BWT in 136 iterations.
+[bwa_index] 374.57 seconds elapse.
+[bwa_index] Update BWT... 2.02 sec
+[bwa_index] Pack forward-only FASTA... 7.05 sec
+[bwa_index] Construct SA from BWT and Occ... 126.91 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: /opt/software/BWA/0.7.17-foss-2017b/bin/bwa index -a bwtsw DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_1.fq.gz
+[main] Real time: 520.930 sec; CPU: 519.063 sec
+
+real	8m41.564s
+user	0m0.023s
+sys	0m0.017s
+srun: Job 9106542 step creation temporarily disabled, retrying
+srun: Step created for job 9106542
+[bwa_index] Pack FASTA... 8.11 sec
+[bwa_index] Construct BWT for the packed sequence...
+[BWTIncCreate] textLength=668574800, availableWord=59042972
+[BWTIncConstructFromPacked] 10 iterations done. 93516384 characters processed.
+[BWTIncConstructFromPacked] 20 iterations done. 176486560 characters processed.
+[BWTIncConstructFromPacked] 30 iterations done. 250226672 characters processed.
+[BWTIncConstructFromPacked] 40 iterations done. 315763056 characters processed.
+[BWTIncConstructFromPacked] 50 iterations done. 374007936 characters processed.
+[BWTIncConstructFromPacked] 60 iterations done. 425772128 characters processed.
+[BWTIncConstructFromPacked] 70 iterations done. 471776240 characters processed.
+[BWTIncConstructFromPacked] 80 iterations done. 512660800 characters processed.
+[BWTIncConstructFromPacked] 90 iterations done. 548995072 characters processed.
+[BWTIncConstructFromPacked] 100 iterations done. 581285040 characters processed.
+[BWTIncConstructFromPacked] 110 iterations done. 609980416 characters processed.
+[BWTIncConstructFromPacked] 120 iterations done. 635480896 characters processed.
+[BWTIncConstructFromPacked] 130 iterations done. 658141760 characters processed.
+[bwt_gen] Finished constructing BWT in 136 iterations.
+[bwa_index] 349.15 seconds elapse.
+[bwa_index] Update BWT... 1.95 sec
+[bwa_index] Pack forward-only FASTA... 7.03 sec
+[bwa_index] Construct SA from BWT and Occ... 125.60 sec
+[main] Version: 0.7.17-r1188
+[main] CMD: /opt/software/BWA/0.7.17-foss-2017b/bin/bwa index -a bwtsw DataSet01_Celegans_Paired200Id200Pexp100Cov10E1N0GenomicControl_2.fq.gz
+[main] Real time: 493.547 sec; CPU: 491.846 sec
+
+real	8m54.062s
+user	0m0.023s
+sys	0m0.019s
+JobId=9106542 JobName=Index_short
+   UserId=stewa668(857038) GroupId=chemistry(2001) MCS_label=N/A
+   Priority=523941 Nice=0 Account=general QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:17:48 TimeLimit=04:00:00 TimeMin=N/A
+   SubmitTime=2019-02-07T17:51:29 EligibleTime=2019-02-07T17:51:29
+   AccrueTime=2019-02-07T17:51:29
+   StartTime=2019-02-07T17:51:29 EndTime=2019-02-07T21:51:29 Deadline=N/A
+   PreemptTime=None SuspendTime=None SecsPreSuspend=0
+   LastSchedEval=2019-02-07T17:51:29
+   Partition=general-long AllocNode:Sid=dev-intel18:25038
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=qml-005
+   BatchHost=qml-005
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=1,mem=20G,node=1,billing=3112
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=20G MinTmpDiskNode=0
+   Features=[intel11|intel14|intel16|intel18] DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/mnt/home/stewa668/cmse401-s19/HW3_Example/runBwaIndex_slurm_giab.sb
+   WorkDir=/mnt/home/stewa668/cmse401-s19/HW3_Example
+   Comment=stdout=/mnt/home/stewa668/cmse401-s19/HW3_Example/%x.out 
+   StdErr=/mnt/home/stewa668/cmse401-s19/HW3_Example/Index_short.out
+   StdIn=/dev/null
+   StdOut=/mnt/home/stewa668/cmse401-s19/HW3_Example/Index_short.out
+   Power=
+
+   CPUTime     MaxRSS 
+---------- ---------- 
+  00:17:44            
+  00:17:44            
+  00:09:16    489964K 
+  00:08:16            
+  00:01:29            
+  00:01:29      4376K 
+  00:01:29        92K 
+  00:01:22    102556K 

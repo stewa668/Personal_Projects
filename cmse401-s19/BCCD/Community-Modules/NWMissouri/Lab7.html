@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Lab 7</title>
+  </head>
+  <body>
+    <p align="center"><b>Lab 7 (5 points)<br>
+        CS550, Operating Systems<br>
+        File Systems and Scheduling</b></p>
+    <p align="right"> Name:
+      _____________________________________________ </p>
+    <p>To submit this assignment, you may copy and paste parts of the
+      assignment into a text editor such as nano, vi, notepad, MS Word,
+      OpenOffice Writer, etc.&nbsp; Zip any code and scripts showing the
+      output of your solutions, and submit the zip file to the dropbox
+      for lab 7.&nbsp; Be sure to include a text document including any
+      written/typed/graphed results.&nbsp; The purpose of this lesson is
+      to learn to about scheduling, file systems, and MPI-IO in the C
+      programming language.</p>
+    1. Write a C program (single-threaded) that uses file IO to write a
+    large number of ASCII characters to a file.&nbsp; Use C functions to
+    time the write speed and record it in MB/s.&nbsp; This program
+    should be similar to the program from problem 2.&nbsp; Be sure to
+    look at that program first.&nbsp; Within this program, you must
+    write the following sizes of strings to a file: 1KB, 10KB, 100KB,
+    1MB, and 10MB, you must determine the write speed for each of these,
+    and you must graph your results showing write speed vs. size of the
+    data elements written (string size).<br>
+    <br>
+    2. Unzip the MPI-IO example from the examples page on
+    LittleFe.&nbsp; The command to do so follows below:<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font face="Courier New,
+      Courier, monospace">unzip MPI_IO.zip</font><br>
+    <br>
+    If you are using a BCCD virtual machine, you may need to download <font
+      face="Courier New, Courier, monospace">zip</font> and <font
+      face="Courier New, Courier, monospace">unzip</font> with the
+    following command:<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font face="Courier New,
+      Courier, monospace">sudo apt-get install zip unzip</font><br>
+    <br>
+    Then run:<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <font face="Courier New,
+      Courier, monospace">unzip MPI_IO.zip</font><br>
+    <br>
+    First, try to run the existing file on LittleFe. &nbsp; All the
+    unzipped files should be in a directory called <font face="Courier
+      New, Courier, monospace">MPI_IO</font>.&nbsp; There is a .c file
+    included within the zip file called <font face="Courier New,
+      Courier, monospace">MPIparallelwrite.c</font>.&nbsp; Browse the
+    file using <font face="Courier New, Courier, monospace">nano</font>
+    or another text editor.&nbsp; Next, compile the file using the
+    following command:<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; <font face="Courier New, Courier, monospace">mpicc
+
+
+    </font><font face="Courier New, Courier, monospace"><font
+        face="Courier New, Courier, monospace">MPIparallelwrite</font>.c
+      -O3 -o MPIparallelwrite.exe</font><br>
+    <br>
+    Run this Producer-Consumer project on LittleFe with the following
+    command:<br>
+    <br>
+    &nbsp;&nbsp;&nbsp; <font face="Courier New">mpirun -np 12
+      -machinefile ~/machines-openmpi </font><font face="Courier New"><font
+        face="Courier New, Courier, monospace">MPIparallelwrite</font>.exe
+
+
+      testfile.txt 50000<br>
+    </font><br>
+    Record the output from this file.&nbsp; Note that the file saved
+    will be of approximately 50MB in size because 50000 1KB strings will
+    be written to the file.<br>
+    <br>
+    3. Run the program above several times as described below.&nbsp; Be
+    aware that you will have to delete the test file before each run as
+    your account on LittleFe is limited to 500MB. <br>
+    <br>
+    Make the following modifications to the program, running the program
+    and record the results after you make each modification:<br>
+    <br>
+    a) Change the size of the string written to 10KB and the number of
+    strings written to 5000.<br>
+    b) Change the size of the string written to 100KB and the number of
+    strings written to 500.<br>
+    c) Change the size of the string written to 1MB and the number of
+    strings written to 50.<br>
+    d) Change the size of the string written to 200KB and the number of
+    strings written to 250.<br>
+    <br>
+    Graph the write speed vs. the size of the of data elements written.<br>
+    <br>
+    4. Repeat problem 3, using the Stampede supercomputer instead of
+    LittleFe.&nbsp; You may use 10 times as many strings on Stampede,
+    and it is recommended that you try the program using 16 CPU cores
+    (i.e. 1 node).&nbsp; You may place your output (write speed vs. size
+    of data elements written) on the same graph as used in problem
+    3.&nbsp; Be sure to submit your batch script for this problem.&nbsp;
+    Note that you should not run your program directly on the login node
+    of Stampede.&nbsp; You MUST submit your job to the batch queue.<br>
+    <br>
+    5. Write a multi-threaded C program to compute the number of words
+    in a program (string tokens separated by spaces).<br>
+    <br>
+    This program must provide as output the run time of the whole
+    program in seconds, starting immediately before all threads are
+    created and stopping immediately after all threads are joined.&nbsp;
+    You must use time.h to time this program and the clock() function to
+    compute starting and stopping times.<br>
+    <br>
+    Run the program 3 times.&nbsp; On the first run, use the default
+    scheduling policy for threads (SCHED_OTHER).&nbsp; Record the run
+    time of this program.&nbsp; For the second run, change the
+    scheduling policy to Round Robin (SCHED_RR) and record the run time
+    of this program.&nbsp; For the third run, change the scheduling
+    policy to first-in-first-out (SCHED_FIFO), and record the run time
+    of this program.<br>
+    <br>
+    Explain the results in 3 to 4 sentences, and submit your programs
+    and your results.<br>
+    <br>
+  </body>
+</html>
+
+<p align=left style="font-size: 10pt; color: black; background: white"><b>DISCLAIMER OF LIABILITY:</b>
+The individual to whom this page pertains is solely responsible for the information, 
+content or materials contained in it. Because Northwest Missouri State University 
+has no involvement in managing the content of this page, 
+Northwest will not be liable for any damages of any kind arising from the use of it, 
+including, but not limited to direct, indirect, incidental, punitive, and consequential damages.
+</p>
+
+

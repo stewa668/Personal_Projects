@@ -1,0 +1,107 @@
+200\n\n\n
+
+real	0m0.039s
+user	0m0.035s
+sys	0m0.003s
+
+real	0m0.037s
+user	0m0.035s
+sys	0m0.002s
+
+real	0m0.038s
+user	0m0.036s
+sys	0m0.002s
+\n\n\n1000\n\n\n
+
+real	0m2.353s
+user	0m2.344s
+sys	0m0.007s
+
+real	0m2.752s
+user	0m2.743s
+sys	0m0.008s
+
+real	0m2.476s
+user	0m2.468s
+sys	0m0.007s
+\n\n\n5000\n\n\n
+
+real	1m42.500s
+user	1m42.329s
+sys	0m0.157s
+
+real	1m45.251s
+user	1m45.065s
+sys	0m0.163s
+
+real	1m44.972s
+user	1m44.762s
+sys	0m0.195s
+\n\n\n8000\n\n\n
+
+real	4m44.389s
+user	4m43.348s
+sys	0m1.004s
+
+real	4m45.440s
+user	4m44.663s
+sys	0m0.731s
+
+real	4m43.924s
+user	4m43.467s
+sys	0m0.421s
+\n\n\n10000\n\n\n
+
+real	7m17.765s
+user	7m14.968s
+sys	0m2.732s
+
+real	7m21.233s
+user	7m18.236s
+sys	0m2.936s
+
+real	7m18.570s
+user	7m15.540s
+sys	0m2.973s
+\n\n\n15000\n\n\n
+
+real	18m7.975s
+user	17m48.030s
+sys	0m19.787s
+
+real	18m2.436s
+user	17m42.734s
+sys	0m19.529s
+
+real	18m17.490s
+user	17m57.031s
+sys	0m20.253s
+\n\n\n20000\n\n\n
+
+real	30m7.000s
+user	29m13.680s
+sys	0m53.012s
+
+real	38m20.116s
+user	37m14.922s
+sys	1m4.913s
+
+real	36m47.864s
+user	35m47.265s
+sys	1m0.326s
+\n\n\n40000\n\n\n
+run: line 39: 80387 Killed                  ./mt40000
+
+real	0m13.930s
+user	0m4.631s
+sys	0m8.777s
+run: line 40: 80520 Killed                  ./mt40000
+
+real	0m14.012s
+user	0m4.643s
+sys	0m8.819s
+run: line 41: 80622 Killed                  ./mt40000
+
+real	0m14.124s
+user	0m4.693s
+sys	0m8.919s
